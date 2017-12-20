@@ -10,4 +10,7 @@ export class ReNavbar {
   @bindable({
     defaultBindingMode: bindingMode.oneTime
   }) color = '#c01e22';
+  @bindable({
+    defaultBindingMode: bindingMode.oneTime
+  }) appLogo = '/asset/redeyelogo.png';
 }

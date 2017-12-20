@@ -12,6 +12,7 @@ var ReNavbar = /** @class */ (function () {
     function ReNavbar() {
         this.appTitle = 'RedEye Application';
         this.color = '#c01e22';
+        this.appLogo = '/asset/redeyelogo.png';
     }
     __decorate([
         aurelia_templating_1.bindable({
@@ -23,6 +24,11 @@ var ReNavbar = /** @class */ (function () {
             defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
         })
     ], ReNavbar.prototype, "color", void 0);
+    __decorate([
+        aurelia_templating_1.bindable({
+            defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
+        })
+    ], ReNavbar.prototype, "appLogo", void 0);
     ReNavbar = __decorate([
         aurelia_templating_1.customElement('re-navbar'),
         aurelia_templating_1.containerless()

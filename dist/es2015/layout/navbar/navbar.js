@@ -10,6 +10,7 @@ var ReNavbar = /** @class */ (function () {
     function ReNavbar() {
         this.appTitle = 'RedEye Application';
         this.color = '#c01e22';
+        this.appLogo = '/asset/redeyelogo.png';
     }
     __decorate([
         bindable({
@@ -21,6 +22,11 @@ var ReNavbar = /** @class */ (function () {
             defaultBindingMode: bindingMode.oneTime
         })
     ], ReNavbar.prototype, "color", void 0);
+    __decorate([
+        bindable({
+            defaultBindingMode: bindingMode.oneTime
+        })
+    ], ReNavbar.prototype, "appLogo", void 0);
     ReNavbar = __decorate([
         customElement('re-navbar'),
         containerless()
