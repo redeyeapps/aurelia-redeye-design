@@ -10,6 +10,7 @@ var ConfigBuilder = /** @class */ (function () {
     ConfigBuilder.prototype.useAll = function () {
         return this
             .useNavbar()
+            .useSpreadsheet()
             .useForm();
     };
     ConfigBuilder.prototype.useNavbar = function () {
@@ -18,6 +19,10 @@ var ConfigBuilder = /** @class */ (function () {
     };
     ConfigBuilder.prototype.useForm = function () {
         this.globalResources.push(PLATFORM.moduleName('./form/form'));
+        return this;
+    };
+    ConfigBuilder.prototype.useSpreadsheet = function () {
+        this.globalResources.push(PLATFORM.moduleName('./components/spreadsheet/spreadsheet'));
         return this;
     };
     /**

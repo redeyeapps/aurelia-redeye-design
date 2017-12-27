@@ -11,6 +11,7 @@ export class ConfigBuilder {
   useAll(): ConfigBuilder {
     return this
       .useNavbar()
+      .useSpreadsheet()
       .useForm();
   }
 
@@ -21,6 +22,11 @@ export class ConfigBuilder {
 
   useForm(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./form/form'));
+    return this;
+  }
+
+  useSpreadsheet(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./components/spreadsheet/spreadsheet'));
     return this;
   }
 

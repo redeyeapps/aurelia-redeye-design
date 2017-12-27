@@ -1,0 +1,39 @@
+<template>
+  <require from="./spreadsheet-heading"></require>
+  <div class="spreadsheet">
+    <table>
+      <thead>
+        <tr>
+          <td></td>
+          <td></td>
+          <td repeat.for="column of columns">
+            <re-spreadsheet-heading column.bind="column"></re-spreadsheet-heading>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr repeat.for="row of data"
+          class="${row.isSelected ?  'active' : ''}">
+          <td>
+            <div class="form">
+              <label class="form-checkbox">
+                <input type="checkbox" checked.bind="row.isSelected">
+                <i class="form-checkbox--icon redeye-check wfm-ok"></i>
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="form">
+              <label class="form-checkbox form-checkbox__use-icon">
+                <input type="checkbox" checked.bind="row.isFavourite">
+                <i class="form-checkbox--icon form-checkbox--icon__unchecked redeye-star-empty wfm-star-empty"></i>
+                <i class="form-checkbox--icon form-checkbox--icon__checked redeye-star wfm-star"></i>
+              </label>
+            </div>
+          </td>
+          <td repeat.for="column of columns">${row[column.key]}</td>
+        </tr>        
+      </tbody>
+    </table>
+  </div>
+</template>

@@ -7,6 +7,7 @@ export declare class ConfigBuilder {
     useAll(): ConfigBuilder;
     useNavbar(): ConfigBuilder;
     useForm(): ConfigBuilder;
+    useSpreadsheet(): ConfigBuilder;
     /**
     * Don't globalize any resources
     * Allows you to import yourself via <require></require>
