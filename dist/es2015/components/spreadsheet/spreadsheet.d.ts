@@ -3,11 +3,6 @@ export declare class ReSpreadsheet {
     static id: number;
     data: {
         id: string;
-        name: string;
-        number: string;
-        fileType: string;
-        type: string;
-        rev: string;
         isFavourite: boolean;
         isSelected: boolean;
     }[];
@@ -16,7 +11,11 @@ export declare class ReSpreadsheet {
         label: string;
         type: string;
     }[];
+    responsiveCols: number;
     constructor(element: HTMLElement);
     toggleFavourite(id: string): void;
     toggleSelected(id: string): void;
+    columnsChanged(nv: {
+        responsive: boolean;
+    }[]): void;
 }

@@ -28,13 +28,12 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
                 function ReSpreadsheet(element) {
                     this.element = element;
                     this.data = [
-                        { id: '1', name: 'Piping & Instrumetnation', number: '123123', fileType: 'S', type: 'Drawing', rev: 'C', isFavourite: false, isSelected: false },
-                        { id: '2', name: 'SOmething & Instrumetnation', number: '123123', fileType: 'S', type: 'Drawing', rev: 'D', isFavourite: false, isSelected: false },
-                        { id: '3', name: 'Piping & SOmethingas', number: '123123', fileType: 'S', type: 'Drawing', rev: 'A', isFavourite: false, isSelected: false }
+                        { id: '', isFavourite: false, isSelected: false }
                     ];
                     this.columns = [
                         { key: '', label: '', type: '' }
                     ];
+                    this.responsiveCols = 0;
                 }
                 ReSpreadsheet.prototype.toggleFavourite = function (id) {
                     var row = this.data.find(function (val) { return val.id === id; });
@@ -53,6 +52,9 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
                             isSelected: !row.isSelected
                         });
                     }
+                };
+                ReSpreadsheet.prototype.columnsChanged = function (nv) {
+                    this.responsiveCols = nv.filter(function (val) { return val.responsive; }).length;
                 };
                 ReSpreadsheet.id = 0;
                 __decorate([

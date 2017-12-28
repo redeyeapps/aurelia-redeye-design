@@ -14,15 +14,15 @@ export class ReSpreadsheet {
   @bindable({
     defaultBindingMode: bindingMode.oneWay
   }) data = [
-    { id: '1', name: 'Piping & Instrumetnation', number: '123123', fileType: 'S', type: 'Drawing', rev: 'C', isFavourite: false, isSelected: false },
-    { id: '2', name: 'SOmething & Instrumetnation', number: '123123', fileType: 'S', type: 'Drawing', rev: 'D', isFavourite: false, isSelected: false },
-    { id: '3', name: 'Piping & SOmethingas', number: '123123', fileType: 'S', type: 'Drawing', rev: 'A', isFavourite: false, isSelected: false }
+    { id: '', isFavourite: false, isSelected: false }
   ];
   @bindable({
     defaultBindingMode: bindingMode.oneWay
   }) columns = [
     { key: '', label: '', type: '' }
   ];
+
+  public responsiveCols = 0;
 
   constructor(
     private element: HTMLElement
@@ -46,5 +46,9 @@ export class ReSpreadsheet {
         isSelected: !row.isSelected
       });
     }
+  }
+
+  columnsChanged(nv: {responsive: boolean}[] ) {
+    this.responsiveCols = nv.filter(val => val.responsive).length;
   }
 }

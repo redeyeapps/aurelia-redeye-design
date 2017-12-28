@@ -1,7 +1,14 @@
 <template>
   <require from="./spreadsheet-heading"></require>
+  <require from="../../value-converters/get-value"></require>
+  <require from="../../value-converters/date"></require>
   <div class="spreadsheet">
     <table>
+      <colgroup>
+        <col width="0%"/>
+        <col width="0%"/>
+        <col repeat.for="column of columns" width="${column.responsive ? (100 / responsiveCols) : '0'}%"/>
+      </colgroup>
       <thead>
         <tr>
           <td></td>
@@ -31,7 +38,10 @@
               </label>
             </div>
           </td>
-          <td repeat.for="column of columns">${row[column.key]}</td>
+          <td repeat.for="column of columns" css="${ column.responsive ? 'max-width: 1px;' : ''}">
+            <span if.bind="column.type === 'string'">${row | getValue:column.key}</span>
+            <span if.bind="column.type === 'date'">${row | getValue:column.key | date}</span>
+          </td>
         </tr>        
       </tbody>
     </table>

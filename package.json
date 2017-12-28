@@ -97,7 +97,8 @@
     "aurelia-path": "^1.1.1",
     "aurelia-task-queue": "^1.2.1",
     "aurelia-templating": "^1.6.0",
-    "aurelia-templating-binding": "^1.4.0"
+    "aurelia-templating-binding": "^1.4.0",
+    "date-fns": "^2.0.0-alpha.7"
   },
   "devDependencies": {
     "@types/jest": "^21.1.5",
