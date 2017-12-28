@@ -5,6 +5,7 @@ import { inject } from 'aurelia-dependency-injection';
 // import {getBooleanFromAttributeValue} from '../common/attributes';
 // import {MdInputUpdateService} from './input-update-service';
 import { dispatchEvent } from '../../events';
+import { debounce } from '../../common/debouncer';
 
 @customElement('re-spreadsheet')
 @inject(Element)
@@ -50,5 +51,15 @@ export class ReSpreadsheet {
 
   columnsChanged(nv: {responsive: boolean}[] ) {
     this.responsiveCols = nv.filter(val => val.responsive).length;
+  }
+
+  handleScroll = debounce(this.scrolled, 300);
+
+  scrolled(evt: Event) {
+    const target = <HTMLElement> evt.target;
+    // dispatch the event when the scroll reaches about 90% of the way down.
+    if ((target.offsetHeight + target.scrollTop) >= (target.scrollHeight * 0.9)) {
+      dispatchEvent(this.element, 'scroll-end');
+    }
   }
 }

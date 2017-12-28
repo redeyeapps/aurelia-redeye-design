@@ -18,4 +18,6 @@ export declare class ReSpreadsheet {
     columnsChanged(nv: {
         responsive: boolean;
     }[]): void;
+    handleScroll: () => void;
+    scrolled(evt: Event): void;
 }

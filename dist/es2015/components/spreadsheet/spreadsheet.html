@@ -2,7 +2,7 @@
   <require from="./spreadsheet-heading"></require>
   <require from="../../value-converters/get-value"></require>
   <require from="../../value-converters/date"></require>
-  <div class="spreadsheet">
+  <div class="spreadsheet" scroll.trigger="handleScroll($event)" style="max-height: 60vh; overflow: auto;">
     <table>
       <colgroup>
         <col width="0%"/>

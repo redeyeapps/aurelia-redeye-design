@@ -11,6 +11,7 @@ import { inject } from 'aurelia-dependency-injection';
 // import {getBooleanFromAttributeValue} from '../common/attributes';
 // import {MdInputUpdateService} from './input-update-service';
 import { dispatchEvent } from '../../events';
+import { debounce } from '../../common/debouncer';
 var ReSpreadsheet = /** @class */ (function () {
     function ReSpreadsheet(element) {
         this.element = element;
@@ -21,6 +22,7 @@ var ReSpreadsheet = /** @class */ (function () {
             { key: '', label: '', type: '' }
         ];
         this.responsiveCols = 0;
+        this.handleScroll = debounce(this.scrolled, 300);
     }
     ReSpreadsheet.prototype.toggleFavourite = function (id) {
         var row = this.data.find(function (val) { return val.id === id; });
@@ -42,6 +44,13 @@ var ReSpreadsheet = /** @class */ (function () {
     };
     ReSpreadsheet.prototype.columnsChanged = function (nv) {
         this.responsiveCols = nv.filter(function (val) { return val.responsive; }).length;
+    };
+    ReSpreadsheet.prototype.scrolled = function (evt) {
+        var target = evt.target;
+        // dispatch the event when the scroll reaches about 90% of the way down.
+        if ((target.offsetHeight + target.scrollTop) >= (target.scrollHeight * 0.9)) {
+            dispatchEvent(this.element, 'scroll-end');
+        }
     };
     ReSpreadsheet.id = 0;
     __decorate([

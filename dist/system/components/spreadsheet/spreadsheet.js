@@ -1,4 +1,4 @@
-System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-injection", "../../events"], function (exports_1, context_1) {
+System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-injection", "../../events", "../../common/debouncer"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var aurelia_templating_1, aurelia_binding_1, aurelia_dependency_injection_1, events_1, ReSpreadsheet;
+    var aurelia_templating_1, aurelia_binding_1, aurelia_dependency_injection_1, events_1, debouncer_1, ReSpreadsheet;
     return {
         setters: [
             function (aurelia_templating_1_1) {
@@ -21,6 +21,9 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
             },
             function (events_1_1) {
                 events_1 = events_1_1;
+            },
+            function (debouncer_1_1) {
+                debouncer_1 = debouncer_1_1;
             }
         ],
         execute: function () {
@@ -34,6 +37,7 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
                         { key: '', label: '', type: '' }
                     ];
                     this.responsiveCols = 0;
+                    this.handleScroll = debouncer_1.debounce(this.scrolled, 300);
                 }
                 ReSpreadsheet.prototype.toggleFavourite = function (id) {
                     var row = this.data.find(function (val) { return val.id === id; });
@@ -55,6 +59,13 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
                 };
                 ReSpreadsheet.prototype.columnsChanged = function (nv) {
                     this.responsiveCols = nv.filter(function (val) { return val.responsive; }).length;
+                };
+                ReSpreadsheet.prototype.scrolled = function (evt) {
+                    var target = evt.target;
+                    // dispatch the event when the scroll reaches about 90% of the way down.
+                    if ((target.offsetHeight + target.scrollTop) >= (target.scrollHeight * 0.9)) {
+                        events_1.dispatchEvent(this.element, 'scroll-end');
+                    }
                 };
                 ReSpreadsheet.id = 0;
                 __decorate([

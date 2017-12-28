@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-dependency-injection", "../../events"], function (require, exports, aurelia_templating_1, aurelia_binding_1, aurelia_dependency_injection_1, events_1) {
+define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-dependency-injection", "../../events", "../../common/debouncer"], function (require, exports, aurelia_templating_1, aurelia_binding_1, aurelia_dependency_injection_1, events_1, debouncer_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var ReSpreadsheet = /** @class */ (function () {
@@ -17,6 +17,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
                 { key: '', label: '', type: '' }
             ];
             this.responsiveCols = 0;
+            this.handleScroll = debouncer_1.debounce(this.scrolled, 300);
         }
         ReSpreadsheet.prototype.toggleFavourite = function (id) {
             var row = this.data.find(function (val) { return val.id === id; });
@@ -38,6 +39,13 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
         };
         ReSpreadsheet.prototype.columnsChanged = function (nv) {
             this.responsiveCols = nv.filter(function (val) { return val.responsive; }).length;
+        };
+        ReSpreadsheet.prototype.scrolled = function (evt) {
+            var target = evt.target;
+            // dispatch the event when the scroll reaches about 90% of the way down.
+            if ((target.offsetHeight + target.scrollTop) >= (target.scrollHeight * 0.9)) {
+                events_1.dispatchEvent(this.element, 'scroll-end');
+            }
         };
         ReSpreadsheet.id = 0;
         __decorate([
