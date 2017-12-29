@@ -5,42 +5,39 @@
   <div class="spreadsheet" scroll.trigger="handleScroll($event)" style="max-height: 60vh; overflow: auto;">
     <table>
       <colgroup>
-        <col width="0%"/>
-        <col width="0%"/>
         <col repeat.for="column of columns" width="${column.responsive ? (100 / responsiveCols) : '0'}%"/>
       </colgroup>
       <thead>
         <tr>
-          <td></td>
-          <td></td>
           <td repeat.for="column of columns">
-            <re-spreadsheet-heading column.bind="column"></re-spreadsheet-heading>
+            <re-spreadsheet-heading
+              if.bind="['select', 'favourite'].indexOf(column.type) === -1"
+              column.bind="column"></re-spreadsheet-heading>
           </td>
         </tr>
       </thead>
       <tbody>
         <tr repeat.for="row of data"
-          class="${row.isSelected ?  'active' : ''}">
-          <td>
-            <div class="form">
+          class="${row.isSelected ?  'active' : ''}"
+          click.delegate="handleRowClick($event, row)">
+          <td repeat.for="column of columns" css="${ column.responsive ? 'max-width: 1px;' : ''}">
+            <div class="form" if.bind="column.type === 'select'">
               <label class="form-checkbox">
                 <input type="checkbox" checked.bind="row.isSelected">
                 <i class="form-checkbox--icon redeye-check wfm-ok"></i>
               </label>
             </div>
-          </td>
-          <td>
-            <div class="form">
+            <div class="form" if.bind="column.type === 'favourite'">
               <label class="form-checkbox form-checkbox__use-icon">
                 <input type="checkbox" checked.bind="row.isFavourite">
                 <i class="form-checkbox--icon form-checkbox--icon__unchecked redeye-star-empty wfm-star-empty"></i>
                 <i class="form-checkbox--icon form-checkbox--icon__checked redeye-star wfm-star"></i>
               </label>
             </div>
-          </td>
-          <td repeat.for="column of columns" css="${ column.responsive ? 'max-width: 1px;' : ''}">
             <span if.bind="column.type === 'string'">${row | getValue:column.key}</span>
             <span if.bind="column.type === 'date'">${row | getValue:column.key | date}</span>
+            <span if.bind="column.type === 'custom'">
+              <compose view-model.bind="column.element" model.bind="row"></compose></span>
           </td>
         </tr>        
       </tbody>

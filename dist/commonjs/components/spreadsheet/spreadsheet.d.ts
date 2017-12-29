@@ -20,4 +20,5 @@ export declare class ReSpreadsheet {
     }[]): void;
     handleScroll: () => void;
     scrolled(evt: Event): void;
+    handleRowClick(evt: Event, row: any): boolean;
 }

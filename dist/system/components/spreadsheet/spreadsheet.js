@@ -67,6 +67,26 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
                         events_1.dispatchEvent(this.element, 'scroll-end');
                     }
                 };
+                ReSpreadsheet.prototype.handleRowClick = function (evt, row) {
+                    var target = evt.target;
+                    // Make sure you are not clicking the favourite or select icons
+                    if (target.classList.contains('form-checkbox--icon') ||
+                        target.tagName === 'INPUT' ||
+                        target.tagName === 'A') {
+                        return true;
+                    }
+                    // If a selection has already been made, clicking a row will select that row.
+                    if (this.data.filter(function (val) { return val.isSelected; }).length > 0) {
+                        var idx = this.data.findIndex(function (val) { return val.id === row.id; });
+                        this.data[idx].isSelected = !this.data[idx].isSelected;
+                        return false;
+                    }
+                    // Dispatch a row click event, so the parent can decide what to do with it
+                    events_1.dispatchEvent(this.element, 'row-click', {
+                        row: row
+                    });
+                    return false;
+                };
                 ReSpreadsheet.id = 0;
                 __decorate([
                     aurelia_templating_1.bindable({
