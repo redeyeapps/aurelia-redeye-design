@@ -18,7 +18,14 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
             ];
             this.responsiveCols = 0;
             this.handleScroll = debouncer_1.debounce(this.scrolled, 300);
+            this.handleScrollBound = this.handleScroll.bind(this);
         }
+        ReSpreadsheet.prototype.attached = function () {
+            this.element.addEventListener('scroll', this.handleScrollBound);
+        };
+        ReSpreadsheet.prototype.detached = function () {
+            this.element.removeEventListener('scroll', this.handleScrollBound);
+        };
         ReSpreadsheet.prototype.toggleFavourite = function (id) {
             var row = this.data.find(function (val) { return val.id === id; });
             if (row) {

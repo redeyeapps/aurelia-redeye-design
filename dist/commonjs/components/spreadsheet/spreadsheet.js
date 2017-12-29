@@ -9,9 +9,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_templating_1 = require("aurelia-templating");
 var aurelia_binding_1 = require("aurelia-binding");
 var aurelia_dependency_injection_1 = require("aurelia-dependency-injection");
-// import {TaskQueue} from 'aurelia-task-queue';
-// import {getBooleanFromAttributeValue} from '../common/attributes';
-// import {MdInputUpdateService} from './input-update-service';
 var events_1 = require("../../events");
 var debouncer_1 = require("../../common/debouncer");
 var ReSpreadsheet = /** @class */ (function () {
@@ -25,7 +22,14 @@ var ReSpreadsheet = /** @class */ (function () {
         ];
         this.responsiveCols = 0;
         this.handleScroll = debouncer_1.debounce(this.scrolled, 300);
+        this.handleScrollBound = this.handleScroll.bind(this);
     }
+    ReSpreadsheet.prototype.attached = function () {
+        this.element.addEventListener('scroll', this.handleScrollBound);
+    };
+    ReSpreadsheet.prototype.detached = function () {
+        this.element.removeEventListener('scroll', this.handleScrollBound);
+    };
     ReSpreadsheet.prototype.toggleFavourite = function (id) {
         var row = this.data.find(function (val) { return val.id === id; });
         if (row) {
