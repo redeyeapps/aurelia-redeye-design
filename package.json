@@ -68,13 +68,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vheissu/aurelia-typescript-plugin.git"
+    "url": "git+https://github.com/redeyeapps/aurelia-redeye-design.git"
   },
-  "author": "Dwayne Charrington <dwaynecharrington@gmail.com>",
+  "author": "Justin Rahardjo <justindra91@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/Vheissu/aurelia-typescript-plugin#readme",
+  "homepage": "https://github.com/redeyeapps/aurelia-redeye-design",
   "bugs": {
-    "url": "https://github.com/Vheissu/aurelia-typescript-plugin/issues"
+    "url": "https://github.com/redeyeapps/aurelia-redeye-design/issues"
   },
   "jspm": {
     "registry": "npm",
