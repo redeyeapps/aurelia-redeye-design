@@ -56,7 +56,7 @@ export class ReSpreadsheet {
   }
 
   columnsChanged(nv: {responsive: boolean}[] ) {
-    this.responsiveCols = nv.filter(val => val.responsive).length;
+    this.responsiveCols = nv && nv.length ? nv.filter(val => val.responsive).length : 0;
   }
 
   handleScroll = debounce(this.scrolled, 300);

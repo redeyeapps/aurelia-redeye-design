@@ -47,7 +47,7 @@ var ReSpreadsheet = /** @class */ (function () {
         }
     };
     ReSpreadsheet.prototype.columnsChanged = function (nv) {
-        this.responsiveCols = nv.filter(function (val) { return val.responsive; }).length;
+        this.responsiveCols = nv && nv.length ? nv.filter(function (val) { return val.responsive; }).length : 0;
     };
     ReSpreadsheet.prototype.scrolled = function (evt) {
         var target = evt.target;
