@@ -22,8 +22,8 @@ Column Types:
 * custom - a custom component, using compose, so must add an additional element in the config which will be a custom view model for this item.
 ```js
 // Example of the view model, when using a custom component
-// As you can see, the row is provided straight in and can be used
+// As you can see, the row or column is provided straight in and can be used
 @containerless()
-@inlineView('<template><a route-href="route: templates_view; params.bind: { id: row.id }">${row.name}</a></template>')
+@inlineView('<template><a route-href="route: templates_view; params.bind: { id: row.id }">${column.value}</a></template>')
 class TemplateViewLink {}
 ```

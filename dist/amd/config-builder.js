@@ -13,6 +13,7 @@ define(["require", "exports", "aurelia-pal"], function (require, exports, aureli
             return this
                 .useNavbar()
                 .useSpreadsheet()
+                .useValueConverters()
                 .useForm();
         };
         ConfigBuilder.prototype.useNavbar = function () {
@@ -25,6 +26,10 @@ define(["require", "exports", "aurelia-pal"], function (require, exports, aureli
         };
         ConfigBuilder.prototype.useSpreadsheet = function () {
             this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/spreadsheet/spreadsheet'));
+            return this;
+        };
+        ConfigBuilder.prototype.useValueConverters = function () {
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./value-converters/get-value'));
             return this;
         };
         /**

@@ -1,6 +1,5 @@
 <template>
   <require from="./spreadsheet-heading"></require>
-  <require from="../../value-converters/get-value"></require>
   <require from="../../value-converters/date"></require>
   <div class="spreadsheet" scroll.trigger="handleScroll($event)">
     <table>
@@ -37,7 +36,7 @@
             <span if.bind="column.type === 'string'">${row | getValue:column.key}</span>
             <span if.bind="column.type === 'date'">${row | getValue:column.key | date}</span>
             <span if.bind="column.type === 'custom'">
-              <compose view-model.bind="column.element" model.bind="row"></compose></span>
+              <compose view-model.bind="column.element" containerless></compose></span>
           </td>
         </tr>        
       </tbody>

@@ -5,6 +5,8 @@ define(["require", "exports"], function (require, exports) {
         function GetValueValueConverter() {
         }
         GetValueValueConverter.prototype.toView = function (obj, keyStr) {
+            if (obj === void 0) { obj = {}; }
+            if (keyStr === void 0) { keyStr = ''; }
             var keys = keyStr.split('.');
             var res = obj;
             for (var _i = 0, keys_1 = keys; _i < keys_1.length; _i++) {

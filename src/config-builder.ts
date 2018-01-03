@@ -12,6 +12,7 @@ export class ConfigBuilder {
     return this
       .useNavbar()
       .useSpreadsheet()
+      .useValueConverters()
       .useForm();
   }
 
@@ -27,6 +28,11 @@ export class ConfigBuilder {
 
   useSpreadsheet(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./components/spreadsheet/spreadsheet'));
+    return this;
+  }
+
+  useValueConverters(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./value-converters/get-value'));
     return this;
   }
 
