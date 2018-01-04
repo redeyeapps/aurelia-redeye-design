@@ -38,7 +38,10 @@
             <span if.bind="column.type === 'custom'">
               <compose view-model.bind="column.element" containerless></compose></span>
           </td>
-        </tr>        
+        </tr>
+        <tr if.bind="loading" repeat.for="i of 5" class="row__loading">
+            <td repeat.for="column of columns"></td>
+        </tr>
       </tbody>
     </table>
   </div>

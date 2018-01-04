@@ -21,6 +21,10 @@ export class ReSpreadsheet {
     { key: '', label: '', type: '' }
   ];
 
+  @bindable({
+    defaultBindingMode: bindingMode.oneWay
+  }) loading = false;
+
   public responsiveCols = 0;
 
   constructor(
@@ -65,7 +69,7 @@ export class ReSpreadsheet {
   scrolled(evt: Event) {
     const target = <HTMLElement> evt.target;
     // dispatch the event when the scroll reaches about 90% of the way down.
-    if ((target.offsetHeight + target.scrollTop) >= (target.scrollHeight * 0.9)) {
+    if ((target.offsetHeight + target.scrollTop) >= (target.scrollHeight - 120)) {
       dispatchEvent(this.element, 'scroll-end');
     }
   }

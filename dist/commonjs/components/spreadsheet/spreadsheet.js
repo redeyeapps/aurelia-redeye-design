@@ -20,6 +20,7 @@ var ReSpreadsheet = /** @class */ (function () {
         this.columns = [
             { key: '', label: '', type: '' }
         ];
+        this.loading = false;
         this.responsiveCols = 0;
         this.handleScroll = debouncer_1.debounce(this.scrolled, 300);
         this.handleScrollBound = this.handleScroll.bind(this);
@@ -54,7 +55,7 @@ var ReSpreadsheet = /** @class */ (function () {
     ReSpreadsheet.prototype.scrolled = function (evt) {
         var target = evt.target;
         // dispatch the event when the scroll reaches about 90% of the way down.
-        if ((target.offsetHeight + target.scrollTop) >= (target.scrollHeight * 0.9)) {
+        if ((target.offsetHeight + target.scrollTop) >= (target.scrollHeight - 120)) {
             events_1.dispatchEvent(this.element, 'scroll-end');
         }
     };
@@ -89,6 +90,11 @@ var ReSpreadsheet = /** @class */ (function () {
             defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
         })
     ], ReSpreadsheet.prototype, "columns", void 0);
+    __decorate([
+        aurelia_templating_1.bindable({
+            defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
+        })
+    ], ReSpreadsheet.prototype, "loading", void 0);
     ReSpreadsheet = __decorate([
         aurelia_templating_1.customElement('re-spreadsheet'),
         aurelia_dependency_injection_1.inject(Element)

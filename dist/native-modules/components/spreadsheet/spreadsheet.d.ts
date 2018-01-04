@@ -11,6 +11,7 @@ export declare class ReSpreadsheet {
         label: string;
         type: string;
     }[];
+    loading: boolean;
     responsiveCols: number;
     constructor(element: HTMLElement);
     attached(): void;

@@ -1,5 +1,17 @@
 # Spreadsheet
 
+Usage
+
+```html
+<re-spreadsheet
+  columns.bind="columns"
+  data.bind="data"
+  loading.bind="loading"
+  spreadsheet-heading-click.delegate="updateSort($event)"
+  scroll-end.delegate="handleScrollEnd()"
+  ></re-spreadsheet>
+```
+
 ## Column Config
 
 Column config is an array of different columns consisting of
@@ -20,6 +32,7 @@ Column Types:
 * favourite - a favourite star to favourite the entire row with
 * date - a date formatted using date-fns
 * custom - a custom component, using compose, so must add an additional element in the config which will be a custom view model for this item.
+
 ```js
 // Example of the view model, when using a custom component
 // As you can see, the row or column is provided straight in and can be used
