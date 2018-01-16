@@ -12,12 +12,8 @@ import { debounce } from '../../common/debouncer';
 var ReSpreadsheet = /** @class */ (function () {
     function ReSpreadsheet(element) {
         this.element = element;
-        this.data = [
-            { id: '', isFavourite: false, isSelected: false }
-        ];
-        this.columns = [
-            { key: '', label: '', type: '' }
-        ];
+        this.data = [];
+        this.columns = [];
         this.loading = false;
         this.responsiveCols = 0;
         this.handleScroll = debounce(this.scrolled, 300);
@@ -48,7 +44,7 @@ var ReSpreadsheet = /** @class */ (function () {
         }
     };
     ReSpreadsheet.prototype.columnsChanged = function (nv) {
-        this.responsiveCols = nv && nv.length ? nv.filter(function (val) { return val.responsive; }).length : 0;
+        this.responsiveCols = nv && nv.length ? nv.filter(function (val) { return val.responsive; }).length : 1;
     };
     ReSpreadsheet.prototype.scrolled = function (evt) {
         var target = evt.target;
@@ -77,7 +73,6 @@ var ReSpreadsheet = /** @class */ (function () {
         });
         return false;
     };
-    ReSpreadsheet.id = 0;
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneWay

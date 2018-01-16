@@ -10,12 +10,8 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
     var ReSpreadsheet = /** @class */ (function () {
         function ReSpreadsheet(element) {
             this.element = element;
-            this.data = [
-                { id: '', isFavourite: false, isSelected: false }
-            ];
-            this.columns = [
-                { key: '', label: '', type: '' }
-            ];
+            this.data = [];
+            this.columns = [];
             this.loading = false;
             this.responsiveCols = 0;
             this.handleScroll = debouncer_1.debounce(this.scrolled, 300);
@@ -46,7 +42,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
             }
         };
         ReSpreadsheet.prototype.columnsChanged = function (nv) {
-            this.responsiveCols = nv && nv.length ? nv.filter(function (val) { return val.responsive; }).length : 0;
+            this.responsiveCols = nv && nv.length ? nv.filter(function (val) { return val.responsive; }).length : 1;
         };
         ReSpreadsheet.prototype.scrolled = function (evt) {
             var target = evt.target;
@@ -75,7 +71,6 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
             });
             return false;
         };
-        ReSpreadsheet.id = 0;
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneWay

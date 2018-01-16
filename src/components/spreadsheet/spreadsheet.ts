@@ -8,18 +8,13 @@ import { debounce } from '../../common/debouncer';
 @customElement('re-spreadsheet')
 @inject(Element)
 export class ReSpreadsheet {
-  static id = 0;
+  @bindable({
+    defaultBindingMode: bindingMode.oneWay
+  }) data: { id: string, isFavourite: boolean, isSelected: boolean }[] = [];
 
   @bindable({
     defaultBindingMode: bindingMode.oneWay
-  }) data = [
-    { id: '', isFavourite: false, isSelected: false }
-  ];
-  @bindable({
-    defaultBindingMode: bindingMode.oneWay
-  }) columns = [
-    { key: '', label: '', type: '' }
-  ];
+  }) columns: { key: string, label: string, type: string }[] = [];
 
   @bindable({
     defaultBindingMode: bindingMode.oneWay
@@ -60,7 +55,7 @@ export class ReSpreadsheet {
   }
 
   columnsChanged(nv: {responsive: boolean}[] ) {
-    this.responsiveCols = nv && nv.length ? nv.filter(val => val.responsive).length : 0;
+    this.responsiveCols = nv && nv.length ? nv.filter(val => val.responsive).length : 1;
   }
 
   handleScroll = debounce(this.scrolled, 300);
