@@ -16,7 +16,7 @@ define(["require", "exports"], function (require, exports) {
                 else
                     return '';
             }
-            return res;
+            return res || '';
         };
         return GetValueValueConverter;
     }());

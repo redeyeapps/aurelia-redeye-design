@@ -13,7 +13,7 @@ var GetValueValueConverter = /** @class */ (function () {
             else
                 return '';
         }
-        return res;
+        return res || '';
     };
     return GetValueValueConverter;
 }());

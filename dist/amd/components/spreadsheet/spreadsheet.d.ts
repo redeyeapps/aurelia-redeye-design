@@ -1,6 +1,5 @@
 export declare class ReSpreadsheet {
     private element;
-    static id: number;
     data: {
         id: string;
         isFavourite: boolean;

@@ -20,7 +20,7 @@ System.register([], function (exports_1, context_1) {
                         else
                             return '';
                     }
-                    return res;
+                    return res || '';
                 };
                 return GetValueValueConverter;
             }());
