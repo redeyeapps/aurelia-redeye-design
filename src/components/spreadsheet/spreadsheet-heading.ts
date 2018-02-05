@@ -11,6 +11,7 @@ export class ReSpreadsheetHeading {
     defaultBindingMode: bindingMode.oneWay
   }) column = {
     key: '',
+    sortKey: '',
     dir: ''
   };
 
@@ -21,7 +22,7 @@ export class ReSpreadsheetHeading {
   click(evt: Event) {
     evt.preventDefault();
     dispatchEvent(this.element, 'spreadsheet-heading-click', {
-      key: this.column.key,
+      key: this.column.sortKey || this.column.key,
       dir: this.column.dir === 'asc' ? 'desc' : 'asc'
     });
   }

@@ -15,13 +15,14 @@ var ReSpreadsheetHeading = /** @class */ (function () {
         this.element = element;
         this.column = {
             key: '',
+            sortKey: '',
             dir: ''
         };
     }
     ReSpreadsheetHeading.prototype.click = function (evt) {
         evt.preventDefault();
         events_1.dispatchEvent(this.element, 'spreadsheet-heading-click', {
-            key: this.column.key,
+            key: this.column.sortKey || this.column.key,
             dir: this.column.dir === 'asc' ? 'desc' : 'asc'
         });
     };
