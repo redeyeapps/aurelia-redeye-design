@@ -48,7 +48,7 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
                     if (row) {
                         events_1.dispatchEvent(this.element, 'favourite-click', {
                             id: id,
-                            isFavourite: !row.isFavourite
+                            isFavourite: row.isFavourite
                         });
                     }
                 };
@@ -57,7 +57,7 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
                     if (row) {
                         events_1.dispatchEvent(this.element, 'select-click', {
                             id: id,
-                            isSelected: !row.isSelected
+                            isSelected: row.isSelected
                         });
                     }
                 };

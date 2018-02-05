@@ -32,7 +32,7 @@ System.register(["./config-builder", "./exports"], function (exports_1, context_
             }
         ],
         execute: function () {
-            // build-index-remove end 
+            // build-index-remove end
         }
     };
 });

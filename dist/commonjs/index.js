@@ -16,4 +16,4 @@ function configure(aurelia, configCallback) {
 exports.configure = configure;
 // build-index-remove start
 __export(require("./exports"));
-// build-index-remove end 
+// build-index-remove end

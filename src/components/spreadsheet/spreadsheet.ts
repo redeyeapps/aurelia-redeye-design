@@ -39,7 +39,7 @@ export class ReSpreadsheet {
     if (row) {
       dispatchEvent(this.element, 'favourite-click', {
         id,
-        isFavourite: !row.isFavourite
+        isFavourite: row.isFavourite
       });
     }
   }
@@ -49,7 +49,7 @@ export class ReSpreadsheet {
     if (row) {
       dispatchEvent(this.element, 'select-click', {
         id,
-        isSelected: !row.isSelected
+        isSelected: row.isSelected
       });
     }
   }

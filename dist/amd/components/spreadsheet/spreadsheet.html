@@ -22,13 +22,13 @@
           <td repeat.for="column of columns" css="${ column.responsive ? 'max-width: 1px;' : ''}">
             <div class="form" if.bind="column.type === 'select'">
               <label class="form-checkbox">
-                <input type="checkbox" checked.bind="row.isSelected">
+                <input type="checkbox" checked.bind="row.isSelected" change.delegate="toggleSelected(row.id)">
                 <i class="form-checkbox--icon redeye-check wfm-ok"></i>
               </label>
             </div>
             <div class="form" if.bind="column.type === 'favourite'">
               <label class="form-checkbox form-checkbox__use-icon">
-                <input type="checkbox" checked.bind="row.isFavourite">
+                <input type="checkbox" checked.bind="row.isFavourite" change.delegate="toggleFavourite(row.id)">
                 <i class="form-checkbox--icon form-checkbox--icon__unchecked redeye-star-empty wfm-star-empty"></i>
                 <i class="form-checkbox--icon form-checkbox--icon__checked redeye-star wfm-star"></i>
               </label>
