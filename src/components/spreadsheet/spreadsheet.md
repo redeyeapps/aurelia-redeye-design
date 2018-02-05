@@ -9,6 +9,8 @@ Usage
   loading.bind="loading"
   spreadsheet-heading-click.delegate="updateSort($event)"
   scroll-end.delegate="handleScrollEnd()"
+  favourite-click.delegate="handleFavouriteClick()"
+  select-click.delegate="handleSelectClick()"
   ></re-spreadsheet>
 ```
 
@@ -40,3 +42,37 @@ Column Types:
 @inlineView('<template><a route-href="route: templates_view; params.bind: { id: row.id }">${column.value}</a></template>')
 class TemplateViewLink {}
 ```
+
+## Events
+
+The component emits certain HTML Events
+
+### `spreadsheet-heading-click`
+
+Emitted when the one of the headings in the spreadsheet is clicked. This could be used to determine the sorting direction.
+
+### `favourite-click`
+
+Emitted when the favourite column is toggled for that row. The details of the event is as below:
+
+```js
+{
+  id: 'id of the row',
+  isFavourite: true // Boolean
+}
+```
+
+### `select-click`
+
+Emitted when the selection column is toggled for that row. The details of the event is as below:
+
+```js
+{
+  id: 'id of the row',
+  isSelected: true // Boolean
+}
+```
+
+### `scroll-end`
+
+Emitted when the spreadsheet has scrolled to the end. This requires the component to be scrollable using `CSS`. Useful for when creating an infinity scroll for the spreadsheet.

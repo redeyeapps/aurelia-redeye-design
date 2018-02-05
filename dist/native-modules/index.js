@@ -10,4 +10,4 @@ export function configure(aurelia, configCallback) {
 }
 // build-index-remove start
 export * from './exports';
-// build-index-remove end 
+// build-index-remove end

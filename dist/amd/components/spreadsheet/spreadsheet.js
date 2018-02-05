@@ -28,7 +28,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
             if (row) {
                 events_1.dispatchEvent(this.element, 'favourite-click', {
                     id: id,
-                    isFavourite: !row.isFavourite
+                    isFavourite: row.isFavourite
                 });
             }
         };
@@ -37,7 +37,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
             if (row) {
                 events_1.dispatchEvent(this.element, 'select-click', {
                     id: id,
-                    isSelected: !row.isSelected
+                    isSelected: row.isSelected
                 });
             }
         };

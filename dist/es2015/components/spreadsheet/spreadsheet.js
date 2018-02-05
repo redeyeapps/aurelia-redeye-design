@@ -30,7 +30,7 @@ var ReSpreadsheet = /** @class */ (function () {
         if (row) {
             dispatchEvent(this.element, 'favourite-click', {
                 id: id,
-                isFavourite: !row.isFavourite
+                isFavourite: row.isFavourite
             });
         }
     };
@@ -39,7 +39,7 @@ var ReSpreadsheet = /** @class */ (function () {
         if (row) {
             dispatchEvent(this.element, 'select-click', {
                 id: id,
-                isSelected: !row.isSelected
+                isSelected: row.isSelected
             });
         }
     };
