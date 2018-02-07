@@ -74,7 +74,7 @@ System.register(["aurelia-templating", "aurelia-binding", "aurelia-dependency-in
                 ReSpreadsheet.prototype.handleRowClick = function (evt, row) {
                     var target = evt.target;
                     // Make sure you are not clicking the favourite or select icons
-                    if (target.classList.contains('form-checkbox--icon') ||
+                    if (target.classList.contains('form-checkbox__icon') ||
                         target.tagName === 'INPUT' ||
                         target.tagName === 'A') {
                         return true;
