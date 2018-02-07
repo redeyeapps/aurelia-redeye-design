@@ -23,14 +23,14 @@
             <div class="form" if.bind="column.type === 'select'">
               <label class="form-checkbox">
                 <input type="checkbox" checked.bind="row.isSelected" change.delegate="toggleSelected(row.id)">
-                <i class="form-checkbox--icon redeye-check wfm-ok"></i>
+                <i class="form-checkbox__icon redeye-check wfm-ok"></i>
               </label>
             </div>
             <div class="form" if.bind="column.type === 'favourite'">
-              <label class="form-checkbox form-checkbox__use-icon">
+              <label class="form-checkbox form-checkbox--use-icon">
                 <input type="checkbox" checked.bind="row.isFavourite" change.delegate="toggleFavourite(row.id)">
-                <i class="form-checkbox--icon form-checkbox--icon__unchecked redeye-star-empty wfm-star-empty"></i>
-                <i class="form-checkbox--icon form-checkbox--icon__checked redeye-star wfm-star"></i>
+                <i class="form-checkbox__icon form-checkbox__icon--unchecked redeye-star-empty wfm-star-empty"></i>
+                <i class="form-checkbox__icon form-checkbox__icon--checked redeye-star wfm-star"></i>
               </label>
             </div>
             <span if.bind="column.type === 'string'">${row | getValue:column.key}</span>
@@ -39,7 +39,7 @@
               <compose view-model.bind="column.element" containerless></compose></span>
           </td>
         </tr>
-        <tr if.bind="loading" repeat.for="i of 5" class="row__loading">
+        <tr if.bind="loading" repeat.for="i of 5" class="row--loading">
             <td repeat.for="column of columns"></td>
         </tr>
       </tbody>
