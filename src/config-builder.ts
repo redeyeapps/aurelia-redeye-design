@@ -12,6 +12,7 @@ export class ConfigBuilder {
     return this
       .useNavbar()
       .useSpreadsheet()
+      .useTileList()
       .useValueConverters()
       .useForm();
   }
@@ -28,6 +29,11 @@ export class ConfigBuilder {
 
   useSpreadsheet(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./components/spreadsheet/spreadsheet'));
+    return this;
+  }
+
+  useTileList(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./components/tile-list/tile-list'));
     return this;
   }
 

@@ -1,0 +1,14 @@
+<template>
+  <div class="tile-list tile-list--hover">
+    <div class="tile tile--centered" repeat.for="row of data"
+      click.delegate="handleTileClick(row)">
+      <div class="tile__icon">
+        <i class="${config.icon.class}"></i>
+      </div>
+      <div class="tile__content">
+        <p class="tile__title">${row[config.content.title.key]}</p>
+        <p class="tile__subtitle text-gray">${row[config.content.subtitle.key]}</p>
+      </div>
+    </div>
+  </div>
+</template>
