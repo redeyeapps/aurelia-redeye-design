@@ -8,6 +8,7 @@ export declare class ConfigBuilder {
     useNavbar(): ConfigBuilder;
     useForm(): ConfigBuilder;
     useSpreadsheet(): ConfigBuilder;
+    useTileList(): ConfigBuilder;
     useValueConverters(): ConfigBuilder;
     /**
     * Don't globalize any resources

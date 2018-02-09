@@ -13,6 +13,7 @@ var ConfigBuilder = /** @class */ (function () {
         return this
             .useNavbar()
             .useSpreadsheet()
+            .useTileList()
             .useValueConverters()
             .useForm();
     };
@@ -26,6 +27,10 @@ var ConfigBuilder = /** @class */ (function () {
     };
     ConfigBuilder.prototype.useSpreadsheet = function () {
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/spreadsheet/spreadsheet'));
+        return this;
+    };
+    ConfigBuilder.prototype.useTileList = function () {
+        this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/tile-list/tile-list'));
         return this;
     };
     ConfigBuilder.prototype.useValueConverters = function () {

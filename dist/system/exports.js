@@ -1,4 +1,4 @@
-System.register(["./form/form", "./layout/navbar/navbar", "./components/spreadsheet/spreadsheet"], function (exports_1, context_1) {
+System.register(["./form/form", "./layout/navbar/navbar", "./components/spreadsheet/spreadsheet", "./components/tile-list/tile-list"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -18,6 +18,9 @@ System.register(["./form/form", "./layout/navbar/navbar", "./components/spreadsh
             },
             function (spreadsheet_1_1) {
                 exportStar_1(spreadsheet_1_1);
+            },
+            function (tile_list_1_1) {
+                exportStar_1(tile_list_1_1);
             }
         ],
         execute: function () {
