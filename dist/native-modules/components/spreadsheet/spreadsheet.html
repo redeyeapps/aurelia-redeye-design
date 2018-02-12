@@ -2,7 +2,7 @@
   <require from="./spreadsheet-heading"></require>
   <require from="../../value-converters/date"></require>
   <div class="spreadsheet" scroll.trigger="handleScroll($event)">
-    <table>
+    <table class="table--clickable">
       <colgroup>
         <col repeat.for="column of columns" width="${column.responsive ? (100 / responsiveCols) : '1'}%"/>
       </colgroup>
