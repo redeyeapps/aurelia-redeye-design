@@ -1,6 +1,6 @@
 <template>
   <div class="tile-list tile-list--hover">
-    <div class="tile tile--centered ${row.isActive ? 'active' : ''}" repeat.for="row of data"
+    <div class="tile tile--centered tile--nowrap ${row.isActive ? 'active' : ''}" repeat.for="row of data"
       click.delegate="handleTileClick(row)">
       <div class="tile__icon">
         <i class="${config[row.entityType].icon.class}"></i>
