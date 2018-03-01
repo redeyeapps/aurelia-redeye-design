@@ -7,6 +7,7 @@ export declare class ConfigBuilder {
     useAll(): ConfigBuilder;
     useNavbar(): ConfigBuilder;
     useForm(): ConfigBuilder;
+    useDropdown(): ConfigBuilder;
     useSpreadsheet(): ConfigBuilder;
     useTileList(): ConfigBuilder;
     useValueConverters(): ConfigBuilder;

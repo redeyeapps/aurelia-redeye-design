@@ -1,0 +1,10 @@
+<template>
+  <div class="dropdown">
+    <button class="dropdown__toggle ${btnClass}" tabindex="0">
+      <slot name="button">Dropdown</slot>
+    </button>
+    <ul class="dropdown__menu" active-class.bind="menuOpen" ref="menuEl">
+      <slot name="menu"></slot>
+    </ul>
+  </div>
+</template>

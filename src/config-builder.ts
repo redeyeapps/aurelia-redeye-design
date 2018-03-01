@@ -11,6 +11,7 @@ export class ConfigBuilder {
   useAll(): ConfigBuilder {
     return this
       .useNavbar()
+      .useDropdown()
       .useSpreadsheet()
       .useTileList()
       .useValueConverters()
@@ -24,6 +25,11 @@ export class ConfigBuilder {
 
   useForm(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./form/form'));
+    return this;
+  }
+
+  useDropdown(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./components/dropdown/dropdown'));
     return this;
   }
 

@@ -10,6 +10,7 @@ var ConfigBuilder = /** @class */ (function () {
     ConfigBuilder.prototype.useAll = function () {
         return this
             .useNavbar()
+            .useDropdown()
             .useSpreadsheet()
             .useTileList()
             .useValueConverters()
@@ -21,6 +22,10 @@ var ConfigBuilder = /** @class */ (function () {
     };
     ConfigBuilder.prototype.useForm = function () {
         this.globalResources.push(PLATFORM.moduleName('./form/form'));
+        return this;
+    };
+    ConfigBuilder.prototype.useDropdown = function () {
+        this.globalResources.push(PLATFORM.moduleName('./components/dropdown/dropdown'));
         return this;
     };
     ConfigBuilder.prototype.useSpreadsheet = function () {
