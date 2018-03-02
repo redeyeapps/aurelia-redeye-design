@@ -24,6 +24,7 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                         .useSpreadsheet()
                         .useTileList()
                         .useValueConverters()
+                        .useCustomAtrributes()
                         .useForm();
                 };
                 ConfigBuilder.prototype.useNavbar = function () {
@@ -48,6 +49,10 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                 };
                 ConfigBuilder.prototype.useValueConverters = function () {
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./value-converters/get-value'));
+                    return this;
+                };
+                ConfigBuilder.prototype.useCustomAtrributes = function () {
+                    this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/active-class'));
                     return this;
                 };
                 /**

@@ -1,5 +1,7 @@
-export declare class ActiveClassCustomAttribute {
+export declare class ReActiveClassCustomAttribute {
     private element;
+    private activeClass;
     constructor(element: HTMLElement);
-    valueChanged(newValue: boolean): void;
+    attached(): void;
+    valueChanged(newValue?: boolean): void;
 }

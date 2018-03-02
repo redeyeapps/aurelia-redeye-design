@@ -15,6 +15,7 @@ export class ConfigBuilder {
       .useSpreadsheet()
       .useTileList()
       .useValueConverters()
+      .useCustomAtrributes()
       .useForm();
   }
 
@@ -45,6 +46,11 @@ export class ConfigBuilder {
 
   useValueConverters(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./value-converters/get-value'));
+    return this;
+  }
+
+  useCustomAtrributes(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./custom-attributes/active-class'));
     return this;
   }
 

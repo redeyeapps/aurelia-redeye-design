@@ -7,23 +7,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-templating", "aurelia-dependency-injection"], function (require, exports, aurelia_templating_1, aurelia_dependency_injection_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var ActiveClassCustomAttribute = /** @class */ (function () {
-        function ActiveClassCustomAttribute(element) {
+    var ReActiveClassCustomAttribute = /** @class */ (function () {
+        function ReActiveClassCustomAttribute(element) {
             this.element = element;
+            this.activeClass = 'active';
         }
-        ActiveClassCustomAttribute.prototype.valueChanged = function (newValue) {
-            if (newValue) {
-                this.element.classList.add('active');
-            }
-            else {
-                this.element.classList.remove('active');
+        ReActiveClassCustomAttribute.prototype.attached = function () {
+            var className = this.element.dataset.active || '';
+            if (className.length > 0) {
+                this.activeClass = className + "--active";
             }
         };
-        ActiveClassCustomAttribute = __decorate([
-            aurelia_templating_1.customAttribute('active-class'),
+        ReActiveClassCustomAttribute.prototype.valueChanged = function (newValue) {
+            if (newValue === void 0) { newValue = false; }
+            if (newValue) {
+                this.element.classList.add(this.activeClass);
+            }
+            else {
+                this.element.classList.remove(this.activeClass);
+            }
+        };
+        ReActiveClassCustomAttribute = __decorate([
+            aurelia_templating_1.customAttribute('re-active-class'),
             aurelia_dependency_injection_1.inject(Element)
-        ], ActiveClassCustomAttribute);
-        return ActiveClassCustomAttribute;
+        ], ReActiveClassCustomAttribute);
+        return ReActiveClassCustomAttribute;
     }());
-    exports.ActiveClassCustomAttribute = ActiveClassCustomAttribute;
+    exports.ReActiveClassCustomAttribute = ReActiveClassCustomAttribute;
 });

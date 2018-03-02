@@ -5,7 +5,7 @@ import { customElement, bindable } from 'aurelia-templating';
 export class ReDropdown {
   @bindable({
     defaultBindingMode: bindingMode.oneWay
-  }) btnClass = 'btn';
+  }) btnClass = '';
   @bindable({
     defaultBindingMode: bindingMode.oneWay
   }) badgeCount = null;
@@ -32,7 +32,7 @@ export class ReDropdown {
   _clickEventHandler(evt: Event) {
     const target = <HTMLElement> evt.target;
     if (!this.menuEl.contains(target) ||
-        target.hasAttribute('close-menu')) {
+        !target.hasAttribute('no-close')) {
       this.menuOpen = false;
       this._removeEventListener();
     }

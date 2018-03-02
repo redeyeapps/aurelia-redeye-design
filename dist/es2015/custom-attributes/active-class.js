@@ -6,22 +6,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { customAttribute } from 'aurelia-templating';
 import { inject } from 'aurelia-dependency-injection';
-var ActiveClassCustomAttribute = /** @class */ (function () {
-    function ActiveClassCustomAttribute(element) {
+var ReActiveClassCustomAttribute = /** @class */ (function () {
+    function ReActiveClassCustomAttribute(element) {
         this.element = element;
+        this.activeClass = 'active';
     }
-    ActiveClassCustomAttribute.prototype.valueChanged = function (newValue) {
-        if (newValue) {
-            this.element.classList.add('active');
-        }
-        else {
-            this.element.classList.remove('active');
+    ReActiveClassCustomAttribute.prototype.attached = function () {
+        var className = this.element.dataset.active || '';
+        if (className.length > 0) {
+            this.activeClass = className + "--active";
         }
     };
-    ActiveClassCustomAttribute = __decorate([
-        customAttribute('active-class'),
+    ReActiveClassCustomAttribute.prototype.valueChanged = function (newValue) {
+        if (newValue === void 0) { newValue = false; }
+        if (newValue) {
+            this.element.classList.add(this.activeClass);
+        }
+        else {
+            this.element.classList.remove(this.activeClass);
+        }
+    };
+    ReActiveClassCustomAttribute = __decorate([
+        customAttribute('re-active-class'),
         inject(Element)
-    ], ActiveClassCustomAttribute);
-    return ActiveClassCustomAttribute;
+    ], ReActiveClassCustomAttribute);
+    return ReActiveClassCustomAttribute;
 }());
-export { ActiveClassCustomAttribute };
+export { ReActiveClassCustomAttribute };

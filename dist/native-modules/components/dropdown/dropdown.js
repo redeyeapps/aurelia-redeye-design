@@ -8,7 +8,7 @@ import { bindingMode } from 'aurelia-binding';
 import { customElement, bindable } from 'aurelia-templating';
 var ReDropdown = /** @class */ (function () {
     function ReDropdown() {
-        this.btnClass = 'btn';
+        this.btnClass = '';
         this.badgeCount = null;
         this.menuOpen = false;
     }
@@ -30,7 +30,7 @@ var ReDropdown = /** @class */ (function () {
     ReDropdown.prototype._clickEventHandler = function (evt) {
         var target = evt.target;
         if (!this.menuEl.contains(target) ||
-            target.hasAttribute('close-menu')) {
+            !target.hasAttribute('no-close')) {
             this.menuOpen = false;
             this._removeEventListener();
         }

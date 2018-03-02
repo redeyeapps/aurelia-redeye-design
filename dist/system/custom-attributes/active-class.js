@@ -7,7 +7,7 @@ System.register(["aurelia-templating", "aurelia-dependency-injection"], function
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var aurelia_templating_1, aurelia_dependency_injection_1, ActiveClassCustomAttribute;
+    var aurelia_templating_1, aurelia_dependency_injection_1, ReActiveClassCustomAttribute;
     return {
         setters: [
             function (aurelia_templating_1_1) {
@@ -18,25 +18,33 @@ System.register(["aurelia-templating", "aurelia-dependency-injection"], function
             }
         ],
         execute: function () {
-            ActiveClassCustomAttribute = /** @class */ (function () {
-                function ActiveClassCustomAttribute(element) {
+            ReActiveClassCustomAttribute = /** @class */ (function () {
+                function ReActiveClassCustomAttribute(element) {
                     this.element = element;
+                    this.activeClass = 'active';
                 }
-                ActiveClassCustomAttribute.prototype.valueChanged = function (newValue) {
-                    if (newValue) {
-                        this.element.classList.add('active');
-                    }
-                    else {
-                        this.element.classList.remove('active');
+                ReActiveClassCustomAttribute.prototype.attached = function () {
+                    var className = this.element.dataset.active || '';
+                    if (className.length > 0) {
+                        this.activeClass = className + "--active";
                     }
                 };
-                ActiveClassCustomAttribute = __decorate([
-                    aurelia_templating_1.customAttribute('active-class'),
+                ReActiveClassCustomAttribute.prototype.valueChanged = function (newValue) {
+                    if (newValue === void 0) { newValue = false; }
+                    if (newValue) {
+                        this.element.classList.add(this.activeClass);
+                    }
+                    else {
+                        this.element.classList.remove(this.activeClass);
+                    }
+                };
+                ReActiveClassCustomAttribute = __decorate([
+                    aurelia_templating_1.customAttribute('re-active-class'),
                     aurelia_dependency_injection_1.inject(Element)
-                ], ActiveClassCustomAttribute);
-                return ActiveClassCustomAttribute;
+                ], ReActiveClassCustomAttribute);
+                return ReActiveClassCustomAttribute;
             }());
-            exports_1("ActiveClassCustomAttribute", ActiveClassCustomAttribute);
+            exports_1("ReActiveClassCustomAttribute", ReActiveClassCustomAttribute);
         }
     };
 });

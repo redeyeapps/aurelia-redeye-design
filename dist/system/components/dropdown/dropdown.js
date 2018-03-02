@@ -20,7 +20,7 @@ System.register(["aurelia-binding", "aurelia-templating"], function (exports_1, 
         execute: function () {
             ReDropdown = /** @class */ (function () {
                 function ReDropdown() {
-                    this.btnClass = 'btn';
+                    this.btnClass = '';
                     this.badgeCount = null;
                     this.menuOpen = false;
                 }
@@ -42,7 +42,7 @@ System.register(["aurelia-binding", "aurelia-templating"], function (exports_1, 
                 ReDropdown.prototype._clickEventHandler = function (evt) {
                     var target = evt.target;
                     if (!this.menuEl.contains(target) ||
-                        target.hasAttribute('close-menu')) {
+                        !target.hasAttribute('no-close')) {
                         this.menuOpen = false;
                         this._removeEventListener();
                     }

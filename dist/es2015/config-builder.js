@@ -14,6 +14,7 @@ var ConfigBuilder = /** @class */ (function () {
             .useSpreadsheet()
             .useTileList()
             .useValueConverters()
+            .useCustomAtrributes()
             .useForm();
     };
     ConfigBuilder.prototype.useNavbar = function () {
@@ -38,6 +39,10 @@ var ConfigBuilder = /** @class */ (function () {
     };
     ConfigBuilder.prototype.useValueConverters = function () {
         this.globalResources.push(PLATFORM.moduleName('./value-converters/get-value'));
+        return this;
+    };
+    ConfigBuilder.prototype.useCustomAtrributes = function () {
+        this.globalResources.push(PLATFORM.moduleName('./custom-attributes/active-class'));
         return this;
     };
     /**

@@ -9,7 +9,7 @@ define(["require", "exports", "aurelia-binding", "aurelia-templating"], function
     Object.defineProperty(exports, "__esModule", { value: true });
     var ReDropdown = /** @class */ (function () {
         function ReDropdown() {
-            this.btnClass = 'btn';
+            this.btnClass = '';
             this.badgeCount = null;
             this.menuOpen = false;
         }
@@ -31,7 +31,7 @@ define(["require", "exports", "aurelia-binding", "aurelia-templating"], function
         ReDropdown.prototype._clickEventHandler = function (evt) {
             var target = evt.target;
             if (!this.menuEl.contains(target) ||
-                target.hasAttribute('close-menu')) {
+                !target.hasAttribute('no-close')) {
                 this.menuOpen = false;
                 this._removeEventListener();
             }
