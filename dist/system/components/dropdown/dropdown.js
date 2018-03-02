@@ -71,19 +71,6 @@ System.register(["aurelia-binding", "aurelia-templating"], function (exports_1, 
                 return ReDropdown;
             }());
             exports_1("ReDropdown", ReDropdown);
-            // @inject(Element)
-            // export class BadgeCustomAttribute {
-            //   constructor(element) {
-            //     this.element = element;
-            //   }
-            //   valueChanged(newCount) {
-            //     if (newCount) {
-            //       this.element.setAttribute('data-badge', newCount);
-            //     } else {
-            //       this.element.removeAttribute('data-badge');
-            //     }
-            //   }
-            // }
         }
     };
 });

@@ -61,16 +61,3 @@ var ReDropdown = /** @class */ (function () {
     return ReDropdown;
 }());
 exports.ReDropdown = ReDropdown;
-// @inject(Element)
-// export class BadgeCustomAttribute {
-//   constructor(element) {
-//     this.element = element;
-//   }
-//   valueChanged(newCount) {
-//     if (newCount) {
-//       this.element.setAttribute('data-badge', newCount);
-//     } else {
-//       this.element.removeAttribute('data-badge');
-//     }
-//   }
-// }
