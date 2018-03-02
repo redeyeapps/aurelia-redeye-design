@@ -11,9 +11,11 @@ export class ConfigBuilder {
   useAll(): ConfigBuilder {
     return this
       .useNavbar()
+      .useDropdown()
       .useSpreadsheet()
       .useTileList()
       .useValueConverters()
+      .useCustomAtrributes()
       .useForm();
   }
 
@@ -24,6 +26,11 @@ export class ConfigBuilder {
 
   useForm(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./form/form'));
+    return this;
+  }
+
+  useDropdown(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./components/dropdown/dropdown'));
     return this;
   }
 
@@ -39,6 +46,11 @@ export class ConfigBuilder {
 
   useValueConverters(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./value-converters/get-value'));
+    return this;
+  }
+
+  useCustomAtrributes(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./custom-attributes/active-class'));
     return this;
   }
 

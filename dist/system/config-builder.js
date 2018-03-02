@@ -20,9 +20,11 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                 ConfigBuilder.prototype.useAll = function () {
                     return this
                         .useNavbar()
+                        .useDropdown()
                         .useSpreadsheet()
                         .useTileList()
                         .useValueConverters()
+                        .useCustomAtrributes()
                         .useForm();
                 };
                 ConfigBuilder.prototype.useNavbar = function () {
@@ -31,6 +33,10 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                 };
                 ConfigBuilder.prototype.useForm = function () {
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form'));
+                    return this;
+                };
+                ConfigBuilder.prototype.useDropdown = function () {
+                    this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/dropdown/dropdown'));
                     return this;
                 };
                 ConfigBuilder.prototype.useSpreadsheet = function () {
@@ -43,6 +49,10 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                 };
                 ConfigBuilder.prototype.useValueConverters = function () {
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./value-converters/get-value'));
+                    return this;
+                };
+                ConfigBuilder.prototype.useCustomAtrributes = function () {
+                    this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/active-class'));
                     return this;
                 };
                 /**

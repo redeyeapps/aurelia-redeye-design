@@ -7,9 +7,11 @@ export declare class ConfigBuilder {
     useAll(): ConfigBuilder;
     useNavbar(): ConfigBuilder;
     useForm(): ConfigBuilder;
+    useDropdown(): ConfigBuilder;
     useSpreadsheet(): ConfigBuilder;
     useTileList(): ConfigBuilder;
     useValueConverters(): ConfigBuilder;
+    useCustomAtrributes(): ConfigBuilder;
     /**
     * Don't globalize any resources
     * Allows you to import yourself via <require></require>
