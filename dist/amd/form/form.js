@@ -9,17 +9,33 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
     Object.defineProperty(exports, "__esModule", { value: true });
     var ReForm = /** @class */ (function () {
         function ReForm() {
-            this.label = '';
+            // private input: HTMLElement | null = null;
             this.type = 'text';
+            this.textarea = false;
+            this.label = '';
+            this.placeholder = '';
             this.disabled = false;
             this.readonly = false;
-            this.placeholder = '';
-            this.textarea = false;
             this.hint = '';
             this.actionHref = '';
             this.actionLabel = 'action';
+            this.value = '';
+            this.min = '';
+            this.max = '';
+            this.step = '';
+            this.maxlength = '';
         }
         ReForm.id = 0;
+        __decorate([
+            aurelia_templating_1.bindable({
+                defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
+            })
+        ], ReForm.prototype, "type", void 0);
+        __decorate([
+            aurelia_templating_1.bindable({
+                defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
+            })
+        ], ReForm.prototype, "textarea", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
@@ -29,7 +45,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
             })
-        ], ReForm.prototype, "type", void 0);
+        ], ReForm.prototype, "placeholder", void 0);
         __decorate([
             aurelia_templating_1.bindable()
         ], ReForm.prototype, "disabled", void 0);
@@ -38,25 +54,36 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
         ], ReForm.prototype, "readonly", void 0);
         __decorate([
             aurelia_templating_1.bindable({
-                defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
+                defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
             })
-        ], ReForm.prototype, "placeholder", void 0);
-        __decorate([
-            aurelia_templating_1.bindable({
-                defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
-            })
-        ], ReForm.prototype, "textarea", void 0);
-        __decorate([
-            aurelia_templating_1.bindable()
         ], ReForm.prototype, "hint", void 0);
         __decorate([
-            aurelia_templating_1.bindable()
+            aurelia_templating_1.bindable({
+                defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
+            })
         ], ReForm.prototype, "actionHref", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
             })
         ], ReForm.prototype, "actionLabel", void 0);
+        __decorate([
+            aurelia_templating_1.bindable({
+                defaultBindingMode: aurelia_binding_1.bindingMode.twoWay
+            })
+        ], ReForm.prototype, "value", void 0);
+        __decorate([
+            aurelia_templating_1.bindable()
+        ], ReForm.prototype, "min", void 0);
+        __decorate([
+            aurelia_templating_1.bindable()
+        ], ReForm.prototype, "max", void 0);
+        __decorate([
+            aurelia_templating_1.bindable()
+        ], ReForm.prototype, "step", void 0);
+        __decorate([
+            aurelia_templating_1.bindable()
+        ], ReForm.prototype, "maxlength", void 0);
         ReForm = __decorate([
             aurelia_templating_1.customElement('re-form')
         ], ReForm);
