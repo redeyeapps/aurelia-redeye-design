@@ -25,6 +25,7 @@ var ConfigBuilder = /** @class */ (function () {
     };
     ConfigBuilder.prototype.useForm = function () {
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form'));
+        this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-checkbox'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-radio'));
         return this;
     };

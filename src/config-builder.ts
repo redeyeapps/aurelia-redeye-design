@@ -26,6 +26,7 @@ export class ConfigBuilder {
 
   useForm(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./form/form'));
+    this.globalResources.push(PLATFORM.moduleName('./form/form-checkbox'));
     this.globalResources.push(PLATFORM.moduleName('./form/form-radio'));
     return this;
   }

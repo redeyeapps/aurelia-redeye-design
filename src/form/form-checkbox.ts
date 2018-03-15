@@ -1,8 +1,8 @@
 import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
 
-@customElement('re-form-radio')
-export class ReFormRadio {
+@customElement('re-form-checkbox')
+export class ReFormCheckbox {
   @bindable({
     defaultBindingMode: bindingMode.oneTime
   }) label = '';
@@ -23,7 +23,7 @@ export class ReFormRadio {
   }) hint = '';
   @bindable({
     defaultBindingMode: bindingMode.twoWay
-  }) value = '';
+  }) value = [];
 
   @bindable({
     defaultBindingMode: bindingMode.oneWay

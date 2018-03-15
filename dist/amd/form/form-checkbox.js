@@ -7,61 +7,61 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-templating", "aurelia-binding"], function (require, exports, aurelia_templating_1, aurelia_binding_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var ReFormRadio = /** @class */ (function () {
-        function ReFormRadio() {
+    var ReFormCheckbox = /** @class */ (function () {
+        function ReFormCheckbox() {
             this.label = '';
             this.name = '';
             this.disabled = false;
             this.readonly = false;
             this.inline = false;
             this.hint = '';
-            this.value = '';
+            this.value = [];
             this.options = [];
         }
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
             })
-        ], ReFormRadio.prototype, "label", void 0);
+        ], ReFormCheckbox.prototype, "label", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
             })
-        ], ReFormRadio.prototype, "name", void 0);
+        ], ReFormCheckbox.prototype, "name", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
             })
-        ], ReFormRadio.prototype, "disabled", void 0);
+        ], ReFormCheckbox.prototype, "disabled", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
             })
-        ], ReFormRadio.prototype, "readonly", void 0);
+        ], ReFormCheckbox.prototype, "readonly", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
             })
-        ], ReFormRadio.prototype, "inline", void 0);
+        ], ReFormCheckbox.prototype, "inline", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
             })
-        ], ReFormRadio.prototype, "hint", void 0);
+        ], ReFormCheckbox.prototype, "hint", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.twoWay
             })
-        ], ReFormRadio.prototype, "value", void 0);
+        ], ReFormCheckbox.prototype, "value", void 0);
         __decorate([
             aurelia_templating_1.bindable({
                 defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
             })
-        ], ReFormRadio.prototype, "options", void 0);
-        ReFormRadio = __decorate([
-            aurelia_templating_1.customElement('re-form-radio')
-        ], ReFormRadio);
-        return ReFormRadio;
+        ], ReFormCheckbox.prototype, "options", void 0);
+        ReFormCheckbox = __decorate([
+            aurelia_templating_1.customElement('re-form-checkbox')
+        ], ReFormCheckbox);
+        return ReFormCheckbox;
     }());
-    exports.ReFormRadio = ReFormRadio;
+    exports.ReFormCheckbox = ReFormCheckbox;
 });

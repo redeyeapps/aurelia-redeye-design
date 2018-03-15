@@ -1,4 +1,5 @@
 export * from './form/form';
+export * from './form/form-checkbox';
 export * from './form/form-radio';
 export * from './layout/navbar/navbar';
 export * from './components/dropdown/dropdown';

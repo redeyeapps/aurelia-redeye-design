@@ -1,6 +1,6 @@
 export declare class ReFormRadio {
-    static id: number;
     label: string;
+    name: string;
     disabled: boolean;
     readonly: boolean;
     inline: boolean;

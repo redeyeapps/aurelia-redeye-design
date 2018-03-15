@@ -8,8 +8,8 @@ import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
 var ReFormRadio = /** @class */ (function () {
     function ReFormRadio() {
-        // private input: HTMLElement | null = null;
         this.label = '';
+        this.name = '';
         this.disabled = false;
         this.readonly = false;
         this.inline = false;
@@ -17,12 +17,16 @@ var ReFormRadio = /** @class */ (function () {
         this.value = '';
         this.options = [];
     }
-    ReFormRadio.id = 0;
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneTime
         })
     ], ReFormRadio.prototype, "label", void 0);
+    __decorate([
+        bindable({
+            defaultBindingMode: bindingMode.oneTime
+        })
+    ], ReFormRadio.prototype, "name", void 0);
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneWay

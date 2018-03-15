@@ -1,10 +1,10 @@
-export declare class ReFormRadio {
+export declare class ReFormCheckbox {
     label: string;
     name: string;
     disabled: boolean;
     readonly: boolean;
     inline: boolean;
     hint: string;
-    value: string;
+    value: never[];
     options: never[];
 }

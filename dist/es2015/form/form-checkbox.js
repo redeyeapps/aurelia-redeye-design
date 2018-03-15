@@ -6,60 +6,60 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
-var ReFormRadio = /** @class */ (function () {
-    function ReFormRadio() {
+var ReFormCheckbox = /** @class */ (function () {
+    function ReFormCheckbox() {
         this.label = '';
         this.name = '';
         this.disabled = false;
         this.readonly = false;
         this.inline = false;
         this.hint = '';
-        this.value = '';
+        this.value = [];
         this.options = [];
     }
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneTime
         })
-    ], ReFormRadio.prototype, "label", void 0);
+    ], ReFormCheckbox.prototype, "label", void 0);
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneTime
         })
-    ], ReFormRadio.prototype, "name", void 0);
+    ], ReFormCheckbox.prototype, "name", void 0);
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneWay
         })
-    ], ReFormRadio.prototype, "disabled", void 0);
+    ], ReFormCheckbox.prototype, "disabled", void 0);
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneWay
         })
-    ], ReFormRadio.prototype, "readonly", void 0);
+    ], ReFormCheckbox.prototype, "readonly", void 0);
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneWay
         })
-    ], ReFormRadio.prototype, "inline", void 0);
+    ], ReFormCheckbox.prototype, "inline", void 0);
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneWay
         })
-    ], ReFormRadio.prototype, "hint", void 0);
+    ], ReFormCheckbox.prototype, "hint", void 0);
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.twoWay
         })
-    ], ReFormRadio.prototype, "value", void 0);
+    ], ReFormCheckbox.prototype, "value", void 0);
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneWay
         })
-    ], ReFormRadio.prototype, "options", void 0);
-    ReFormRadio = __decorate([
-        customElement('re-form-radio')
-    ], ReFormRadio);
-    return ReFormRadio;
+    ], ReFormCheckbox.prototype, "options", void 0);
+    ReFormCheckbox = __decorate([
+        customElement('re-form-checkbox')
+    ], ReFormCheckbox);
+    return ReFormCheckbox;
 }());
-export { ReFormRadio };
+export { ReFormCheckbox };

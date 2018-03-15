@@ -7,7 +7,7 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var aurelia_templating_1, aurelia_binding_1, ReFormRadio;
+    var aurelia_templating_1, aurelia_binding_1, ReFormCheckbox;
     return {
         setters: [
             function (aurelia_templating_1_1) {
@@ -18,63 +18,63 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
             }
         ],
         execute: function () {
-            ReFormRadio = /** @class */ (function () {
-                function ReFormRadio() {
+            ReFormCheckbox = /** @class */ (function () {
+                function ReFormCheckbox() {
                     this.label = '';
                     this.name = '';
                     this.disabled = false;
                     this.readonly = false;
                     this.inline = false;
                     this.hint = '';
-                    this.value = '';
+                    this.value = [];
                     this.options = [];
                 }
                 __decorate([
                     aurelia_templating_1.bindable({
                         defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
                     })
-                ], ReFormRadio.prototype, "label", void 0);
+                ], ReFormCheckbox.prototype, "label", void 0);
                 __decorate([
                     aurelia_templating_1.bindable({
                         defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
                     })
-                ], ReFormRadio.prototype, "name", void 0);
+                ], ReFormCheckbox.prototype, "name", void 0);
                 __decorate([
                     aurelia_templating_1.bindable({
                         defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
                     })
-                ], ReFormRadio.prototype, "disabled", void 0);
+                ], ReFormCheckbox.prototype, "disabled", void 0);
                 __decorate([
                     aurelia_templating_1.bindable({
                         defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
                     })
-                ], ReFormRadio.prototype, "readonly", void 0);
+                ], ReFormCheckbox.prototype, "readonly", void 0);
                 __decorate([
                     aurelia_templating_1.bindable({
                         defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
                     })
-                ], ReFormRadio.prototype, "inline", void 0);
+                ], ReFormCheckbox.prototype, "inline", void 0);
                 __decorate([
                     aurelia_templating_1.bindable({
                         defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
                     })
-                ], ReFormRadio.prototype, "hint", void 0);
+                ], ReFormCheckbox.prototype, "hint", void 0);
                 __decorate([
                     aurelia_templating_1.bindable({
                         defaultBindingMode: aurelia_binding_1.bindingMode.twoWay
                     })
-                ], ReFormRadio.prototype, "value", void 0);
+                ], ReFormCheckbox.prototype, "value", void 0);
                 __decorate([
                     aurelia_templating_1.bindable({
                         defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
                     })
-                ], ReFormRadio.prototype, "options", void 0);
-                ReFormRadio = __decorate([
-                    aurelia_templating_1.customElement('re-form-radio')
-                ], ReFormRadio);
-                return ReFormRadio;
+                ], ReFormCheckbox.prototype, "options", void 0);
+                ReFormCheckbox = __decorate([
+                    aurelia_templating_1.customElement('re-form-checkbox')
+                ], ReFormCheckbox);
+                return ReFormCheckbox;
             }());
-            exports_1("ReFormRadio", ReFormRadio);
+            exports_1("ReFormCheckbox", ReFormCheckbox);
         }
     };
 });
