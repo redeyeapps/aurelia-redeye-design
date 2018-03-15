@@ -26,6 +26,7 @@ export class ConfigBuilder {
 
   useForm(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./form/form'));
+    this.globalResources.push(PLATFORM.moduleName('./form/form-radio'));
     return this;
   }
 
@@ -51,6 +52,8 @@ export class ConfigBuilder {
 
   useCustomAtrributes(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/active-class'));
+    this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-disabled'));
+    this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-readonly'));
     return this;
   }
 
