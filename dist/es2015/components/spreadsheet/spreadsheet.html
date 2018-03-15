@@ -20,18 +20,22 @@
           class="${row.isSelected ?  'active' : ''}"
           click.delegate="handleRowClick($event, row)">
           <td repeat.for="column of columns" css="${ column.responsive ? 'max-width: 1px;' : ''}">
-            <div class="form" if.bind="column.type === 'select'">
-              <label class="form-checkbox">
-                <input type="checkbox" checked.bind="row.isSelected" change.delegate="toggleSelected(row.id)">
-                <i class="form-checkbox__icon redeye-check wfm-ok"></i>
-              </label>
+            <div class="form form--no-padding" if.bind="column.type === 'select'">
+              <div class="form__checkbox">
+                <label class="form__option">
+                  <input type="checkbox" checked.bind="row.isSelected" change.delegate="toggleSelected(row.id)">
+                  <i class="form__option__icon redeye-check wfm-ok"></i>
+                </label>
+              </div>
             </div>
-            <div class="form" if.bind="column.type === 'favourite'">
-              <label class="form-checkbox form-checkbox--use-icon">
-                <input type="checkbox" checked.bind="row.isFavourite" change.delegate="toggleFavourite(row.id)">
-                <i class="form-checkbox__icon form-checkbox__icon--unchecked redeye-star-empty wfm-star-empty"></i>
-                <i class="form-checkbox__icon form-checkbox__icon--checked redeye-star wfm-star"></i>
-              </label>
+            <div class="form form--no-padding" if.bind="column.type === 'favourite'">
+              <div class="form__checkbox">
+                <label class="form__option form__option--use-icon">
+                  <input type="checkbox" checked.bind="row.isFavourite" change.delegate="toggleFavourite(row.id)">
+                  <i class="form__option__icon form__option__icon--unchecked redeye-star-empty wfm-star-empty"></i>
+                  <i class="form__option__icon form__option__icon--checked redeye-star wfm-star"></i>
+                </label>
+              </div>
             </div>
             <span if.bind="column.type === 'string'">${row | getValue:column.key}</span>
             <span if.bind="column.type === 'date'">${row | getValue:column.key | date}</span>
