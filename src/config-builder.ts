@@ -27,6 +27,7 @@ export class ConfigBuilder {
   useForm(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./form/form'));
     this.globalResources.push(PLATFORM.moduleName('./form/form-checkbox'));
+    this.globalResources.push(PLATFORM.moduleName('./form/form-number'));
     this.globalResources.push(PLATFORM.moduleName('./form/form-radio'));
     this.globalResources.push(PLATFORM.moduleName('./form/form-text'));
     this.globalResources.push(PLATFORM.moduleName('./form/form-textarea'));
@@ -57,6 +58,7 @@ export class ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/active-class'));
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-disabled'));
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-maxlength'));
+    this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-number'));
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-readonly'));
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-rows'));
     return this;

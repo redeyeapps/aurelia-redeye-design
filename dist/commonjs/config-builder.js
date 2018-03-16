@@ -26,6 +26,7 @@ var ConfigBuilder = /** @class */ (function () {
     ConfigBuilder.prototype.useForm = function () {
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-checkbox'));
+        this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-number'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-radio'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-text'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-textarea'));
@@ -51,6 +52,7 @@ var ConfigBuilder = /** @class */ (function () {
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/active-class'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/form-disabled'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/form-maxlength'));
+        this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/form-number'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/form-readonly'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/form-rows'));
         return this;
