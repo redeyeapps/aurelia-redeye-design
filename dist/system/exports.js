@@ -1,4 +1,4 @@
-System.register(["./form/form", "./form/form-checkbox", "./form/form-radio", "./layout/navbar/navbar", "./components/dropdown/dropdown", "./components/spreadsheet/spreadsheet", "./components/tile-list/tile-list"], function (exports_1, context_1) {
+System.register(["./form/form", "./form/form-checkbox", "./form/form-radio", "./form/form-text", "./layout/navbar/navbar", "./components/dropdown/dropdown", "./components/spreadsheet/spreadsheet", "./components/tile-list/tile-list"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -18,6 +18,9 @@ System.register(["./form/form", "./form/form-checkbox", "./form/form-radio", "./
             },
             function (form_radio_1_1) {
                 exportStar_1(form_radio_1_1);
+            },
+            function (form_text_1_1) {
+                exportStar_1(form_text_1_1);
             },
             function (navbar_1_1) {
                 exportStar_1(navbar_1_1);
