@@ -1,4 +1,4 @@
-System.register(["./form/form", "./form/form-checkbox", "./form/form-number", "./form/form-radio", "./form/form-scale", "./form/form-text", "./form/form-textarea", "./layout/navbar/navbar", "./components/dropdown/dropdown", "./components/spreadsheet/spreadsheet", "./components/tile-list/tile-list"], function (exports_1, context_1) {
+System.register(["./form/form", "./form/form-checkbox", "./form/form-number", "./form/form-radio", "./form/form-scale", "./form/form-select", "./form/form-text", "./form/form-textarea", "./layout/navbar/navbar", "./components/dropdown/dropdown", "./components/spreadsheet/spreadsheet", "./components/tile-list/tile-list"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -24,6 +24,9 @@ System.register(["./form/form", "./form/form-checkbox", "./form/form-number", ".
             },
             function (form_scale_1_1) {
                 exportStar_1(form_scale_1_1);
+            },
+            function (form_select_1_1) {
+                exportStar_1(form_select_1_1);
             },
             function (form_text_1_1) {
                 exportStar_1(form_text_1_1);

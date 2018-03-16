@@ -29,6 +29,7 @@ var ConfigBuilder = /** @class */ (function () {
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-number'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-radio'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-scale'));
+        this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-select'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-text'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-textarea'));
         return this;

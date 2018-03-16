@@ -27,6 +27,7 @@ var ConfigBuilder = /** @class */ (function () {
         this.globalResources.push(PLATFORM.moduleName('./form/form-number'));
         this.globalResources.push(PLATFORM.moduleName('./form/form-radio'));
         this.globalResources.push(PLATFORM.moduleName('./form/form-scale'));
+        this.globalResources.push(PLATFORM.moduleName('./form/form-select'));
         this.globalResources.push(PLATFORM.moduleName('./form/form-text'));
         this.globalResources.push(PLATFORM.moduleName('./form/form-textarea'));
         return this;

@@ -3,6 +3,7 @@ export * from './form/form-checkbox';
 export * from './form/form-number';
 export * from './form/form-radio';
 export * from './form/form-scale';
+export * from './form/form-select';
 export * from './form/form-text';
 export * from './form/form-textarea';
 export * from './layout/navbar/navbar';
