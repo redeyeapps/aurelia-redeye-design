@@ -1,16 +1,16 @@
 <template>
   <div class="form ${inline ? 'form--inline' : ''}">
     <div class="form__input">
-      <label if.bind="label.length" class="form__label">${label}</label>
       <input
-        type="text"
-        id="${id}"
-        name="${name}"
-        placeholder="${placeholder}"
-        value.bind="value"
-        re-form-maxlength="${maxlength}"
-        re-form-disabled="${disabled}" re-form-readonly="${readonly}"
-        />
+      type="text"
+      id="${id}"
+      name="${name}"
+      placeholder="${placeholder}"
+      value.bind="value"
+      re-form-maxlength="${maxlength}"
+      re-form-disabled="${disabled}" re-form-readonly="${readonly}"
+      />
+      <label if.bind="label.length" class="form__label">${label}</label>
       <div class="form__line"></div>
     </div>
     <a if.bind="actionHref" href="${actionHref}" class="form__action">${actionLabel}</a>
