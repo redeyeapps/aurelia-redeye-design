@@ -36,6 +36,7 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-checkbox'));
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-number'));
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-radio'));
+                    this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-scale'));
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-text'));
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-textarea'));
                     return this;
