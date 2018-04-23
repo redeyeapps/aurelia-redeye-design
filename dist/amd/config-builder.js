@@ -12,6 +12,7 @@ define(["require", "exports", "aurelia-pal"], function (require, exports, aureli
         ConfigBuilder.prototype.useAll = function () {
             return this
                 .useNavbar()
+                .useAvatar()
                 .useDropdown()
                 .useSpreadsheet()
                 .useTileList()
@@ -32,6 +33,10 @@ define(["require", "exports", "aurelia-pal"], function (require, exports, aureli
             this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-select'));
             this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-text'));
             this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-textarea'));
+            return this;
+        };
+        ConfigBuilder.prototype.useAvatar = function () {
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/avatar/avatar'));
             return this;
         };
         ConfigBuilder.prototype.useDropdown = function () {

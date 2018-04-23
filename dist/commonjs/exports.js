@@ -12,6 +12,7 @@ __export(require("./form/form-select"));
 __export(require("./form/form-text"));
 __export(require("./form/form-textarea"));
 __export(require("./layout/navbar/navbar"));
+__export(require("./components/avatar/avatar"));
 __export(require("./components/dropdown/dropdown"));
 __export(require("./components/spreadsheet/spreadsheet"));
 __export(require("./components/tile-list/tile-list"));

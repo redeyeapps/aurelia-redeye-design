@@ -20,6 +20,7 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                 ConfigBuilder.prototype.useAll = function () {
                     return this
                         .useNavbar()
+                        .useAvatar()
                         .useDropdown()
                         .useSpreadsheet()
                         .useTileList()
@@ -40,6 +41,10 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-select'));
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-text'));
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-textarea'));
+                    return this;
+                };
+                ConfigBuilder.prototype.useAvatar = function () {
+                    this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/avatar/avatar'));
                     return this;
                 };
                 ConfigBuilder.prototype.useDropdown = function () {

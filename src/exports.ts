@@ -7,6 +7,7 @@ export * from './form/form-select';
 export * from './form/form-text';
 export * from './form/form-textarea';
 export * from './layout/navbar/navbar';
+export * from './components/avatar/avatar';
 export * from './components/dropdown/dropdown';
 export * from './components/spreadsheet/spreadsheet';
 export * from './components/tile-list/tile-list';

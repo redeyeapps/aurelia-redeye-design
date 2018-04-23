@@ -11,6 +11,7 @@ export class ConfigBuilder {
   useAll(): ConfigBuilder {
     return this
       .useNavbar()
+      .useAvatar()
       .useDropdown()
       .useSpreadsheet()
       .useTileList()
@@ -33,6 +34,11 @@ export class ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./form/form-select'));
     this.globalResources.push(PLATFORM.moduleName('./form/form-text'));
     this.globalResources.push(PLATFORM.moduleName('./form/form-textarea'));
+    return this;
+  }
+
+  useAvatar(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./components/avatar/avatar'));
     return this;
   }
 

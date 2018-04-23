@@ -10,6 +10,7 @@ var ConfigBuilder = /** @class */ (function () {
     ConfigBuilder.prototype.useAll = function () {
         return this
             .useNavbar()
+            .useAvatar()
             .useDropdown()
             .useSpreadsheet()
             .useTileList()
@@ -30,6 +31,10 @@ var ConfigBuilder = /** @class */ (function () {
         this.globalResources.push(PLATFORM.moduleName('./form/form-select'));
         this.globalResources.push(PLATFORM.moduleName('./form/form-text'));
         this.globalResources.push(PLATFORM.moduleName('./form/form-textarea'));
+        return this;
+    };
+    ConfigBuilder.prototype.useAvatar = function () {
+        this.globalResources.push(PLATFORM.moduleName('./components/avatar/avatar'));
         return this;
     };
     ConfigBuilder.prototype.useDropdown = function () {
