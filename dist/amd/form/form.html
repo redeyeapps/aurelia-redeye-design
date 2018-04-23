@@ -1,7 +1,21 @@
 <template>
   <div class="form">
-    <input id="input-example" type="${type}" class="form__input" placeholder="${placeholder}">
-    <label for="input-example" class="form__label">${label}</label>
+    <input
+      id="${id}"
+      ref="input"
+      name="${name}"
+      type="${type}"
+      class="form__input"
+      placeholder="${placeholder}"
+      min="${min}"
+      max="${max}"
+      step="${step}"
+      maxlength="${maxlength}"
+      value.bind="value"
+      disabled="${disabled}"
+      readonly="${readonly}"
+      />
+    <label for="${id}" class="form__label">${label}</label>
     <a if.bind="actionHref" href="${actionHref}" class="form__action">${actionLabel}</a>
     <label class="form__hint">${hint}</label>
   </div>

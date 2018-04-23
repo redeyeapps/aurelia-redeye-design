@@ -72,7 +72,7 @@ export class ReSpreadsheet {
   handleRowClick(evt: Event, row: any) {
     const target = <HTMLElement> evt.target;
     // Make sure you are not clicking the favourite or select icons
-    if (target.classList.contains('form-checkbox__icon') ||
+    if (target.classList.contains('form__option__icon') ||
         target.tagName === 'INPUT' ||
         target.tagName === 'A') {
       return true;
