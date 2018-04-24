@@ -19,7 +19,69 @@ var ReFormText = /** @class */ (function () {
         this.actionLabel = '';
         this.value = '';
         this.maxlength = '';
+        this.type = 'text';
+        this.pattern = null;
+        this.patternError = '';
+        this.validated = null;
+        this._regex = /./;
+        this.errorMessage = '';
     }
+    ReFormText.prototype.typeChanged = function (n) {
+        this._resetRegex(n);
+    };
+    ReFormText.prototype.patternChanged = function () {
+        this._resetRegex();
+    };
+    ReFormText.prototype._resetRegex = function (newType) {
+        if (this.pattern) {
+            this._regex = this.pattern;
+            this.errorMessage = this.patternError || '';
+            return;
+        }
+        var type = newType || this.type;
+        switch (type) {
+            case 'email':
+                this._regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                this.errorMessage = 'Please enter a correct email address';
+                break;
+            case 'phone':
+                this._regex = /^\({0,1}((0|\+61)(2|4|3|7|8)){0,1}\){0,1}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{1}(\ |-){0,1}[0-9]{3}$/;
+                this.errorMessage = 'Please enter a correct phone number';
+                break;
+            default:
+                this._regex = /./;
+                this.errorMessage = '';
+                break;
+        }
+    };
+    ReFormText.prototype.handleBlur = function () {
+        this._validate();
+    };
+    ReFormText.prototype._validate = function () {
+        if (this.value.length) {
+            this.validated = this._regex.test(this.value);
+            this.hint = !this.validated && this.errorMessage || '';
+        }
+        else {
+            this.hint = '';
+        }
+    };
+    Object.defineProperty(ReFormText.prototype, "isError", {
+        get: function () {
+            if (this.validated === null)
+                return false;
+            return !this.validated;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ReFormText.prototype, "isSuccess", {
+        get: function () {
+            return this.validated;
+        },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneTime
@@ -71,8 +133,30 @@ var ReFormText = /** @class */ (function () {
         })
     ], ReFormText.prototype, "value", void 0);
     __decorate([
-        bindable()
+        bindable({
+            defaultBindingMode: bindingMode.oneTime
+        })
     ], ReFormText.prototype, "maxlength", void 0);
+    __decorate([
+        bindable({
+            defaultBindingMode: bindingMode.oneTime
+        })
+    ], ReFormText.prototype, "type", void 0);
+    __decorate([
+        bindable({
+            defaultBindingMode: bindingMode.oneWay
+        })
+    ], ReFormText.prototype, "pattern", void 0);
+    __decorate([
+        bindable({
+            defaultBindingMode: bindingMode.oneWay
+        })
+    ], ReFormText.prototype, "patternError", void 0);
+    __decorate([
+        bindable({
+            defaultBindingMode: bindingMode.twoWay
+        })
+    ], ReFormText.prototype, "validated", void 0);
     ReFormText = __decorate([
         customElement('re-form-text')
     ], ReFormText);

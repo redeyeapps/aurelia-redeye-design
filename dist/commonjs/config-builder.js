@@ -62,6 +62,7 @@ var ConfigBuilder = /** @class */ (function () {
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/form-number'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/form-readonly'));
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/form-rows'));
+        this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./custom-attributes/validation-class'));
         return this;
     };
     /**
