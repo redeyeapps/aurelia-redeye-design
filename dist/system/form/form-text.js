@@ -78,6 +78,7 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
                         this.hint = !this.validated && this.errorMessage || '';
                     }
                     else {
+                        this.validated = null;
                         this.hint = '';
                     }
                 };

@@ -101,6 +101,7 @@ export class ReFormText {
       this.validated = this._regex.test(this.value);
       this.hint = !this.validated && this.errorMessage || '';
     } else {
+      this.validated = null;
       this.hint = '';
     }
   }

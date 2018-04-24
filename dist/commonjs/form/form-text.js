@@ -68,6 +68,7 @@ var ReFormText = /** @class */ (function () {
             this.hint = !this.validated && this.errorMessage || '';
         }
         else {
+            this.validated = null;
             this.hint = '';
         }
     };

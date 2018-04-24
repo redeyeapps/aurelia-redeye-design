@@ -67,6 +67,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
                 this.hint = !this.validated && this.errorMessage || '';
             }
             else {
+                this.validated = null;
                 this.hint = '';
             }
         };
