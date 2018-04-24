@@ -32,6 +32,9 @@ var ReFormText = /** @class */ (function () {
     ReFormText.prototype.patternChanged = function () {
         this._resetRegex();
     };
+    ReFormText.prototype.attached = function () {
+        this._validate();
+    };
     ReFormText.prototype._resetRegex = function (newType) {
         if (this.pattern) {
             this._regex = this.pattern;

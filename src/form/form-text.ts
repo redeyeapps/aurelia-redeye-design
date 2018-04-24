@@ -65,6 +65,10 @@ export class ReFormText {
     this._resetRegex();
   }
 
+  attached() {
+    this._validate();
+  }
+
   private _resetRegex(newType?: string) {
     if (this.pattern) {
       this._regex = this.pattern;
