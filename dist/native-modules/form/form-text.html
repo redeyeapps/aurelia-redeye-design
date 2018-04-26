@@ -2,15 +2,14 @@
   <div class="form ${inline ? 'form--inline' : ''}" re-error-class.bind="isError" re-success-class.bind="isSuccess" data-error="form" data-success="form">
     <div class="form__input 4jwwerwerE">
       <input
-      type="${type}"
-      id="${id}"
-      name="${name}"
-      placeholder="${placeholder}"
-      value.bind="value"
-      re-form-maxlength="${maxlength}"
-      re-form-disabled="${disabled}" re-form-readonly="${readonly}"
-      blur.trigger="handleBlur($event)"
-      />
+        type="${type}"
+        name="${name}"
+        placeholder="${placeholder}"
+        value.bind="value"
+        re-form-maxlength="${maxlength}"
+        re-form-disabled="${disabled}" re-form-readonly="${readonly}"
+        blur.trigger="handleBlur($event)"
+        />
       <label if.bind="label.length" class="form__label">${label}</label>
       <div class="form__line"></div>
     </div>
