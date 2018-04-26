@@ -69,6 +69,7 @@ export class ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-number'));
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-readonly'));
     this.globalResources.push(PLATFORM.moduleName('./custom-attributes/form-rows'));
+    this.globalResources.push(PLATFORM.moduleName('./custom-attributes/validation-class'));
     return this;
   }
 
