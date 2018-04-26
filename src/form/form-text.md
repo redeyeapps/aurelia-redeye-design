@@ -1,10 +1,10 @@
-## `<re-form-text>`
+## `<re-form-text></re-form-text>`
 
 This is the form text component, which is probably one of the most used form component.
 
-Here are the options that you can use:
+Here are the attributes that you can assign:
 
-| option        | type    | default | description                                       |
+| attributes    | type    | default | description                                       |
 |---------------|---------|---------|---------------------------------------------------|
 | label         | string  | null    | Label for the form                                |
 | name          | string  | null    | Name for the form                                 |
@@ -25,8 +25,7 @@ Here are the options that you can use:
 
 ### Types
 
-The types to passthrough will firstly be passed onto the HTML element, therefore would need to be a HTML5 Input Type
-There are certain types which includes its own validation methods. The default text type allows anything to be validated as long as it has more than 1 character inputted.
+The types to use will firstly be passed onto the HTML element, therefore would need to be a HTML5 Input Type. There are certain types which includes its own validation methods. The default text type allows anything to be validated as long as it has more than 1 character inputted.
 
 * email - This allows most email addresses, we've used this [one](https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript)
 * phone - This allows the usage of Australia Phone numbers, we've used this [one](https://ilikekillnerds.com/2014/08/regular-expression-for-validating-australian-phone-numbers-including-landline-and-mobile/)
