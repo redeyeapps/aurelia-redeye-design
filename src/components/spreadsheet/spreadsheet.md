@@ -1,39 +1,51 @@
-# Spreadsheet
+## `<re-spreadsheet></re-spreadsheet>`
 
-Usage
+The spreadsheet component displays a list of data in a table depending on the given column configurations.
 
-```html
-<re-spreadsheet
-  columns.bind="columns"
-  data.bind="data"
-  loading.bind="loading"
-  spreadsheet-heading-click.delegate="updateSort($event)"
-  scroll-end.delegate="handleScrollEnd()"
-  favourite-click.delegate="handleFavouriteClick()"
-  select-click.delegate="handleSelectClick()"
-  ></re-spreadsheet>
-```
 
-## Column Config
+The attributes available
 
-Column config is an array of different columns consisting of
+| attributes | type     | default | description                                               |
+|------------|----------|---------|-----------------------------------------------------------|
+| data       | [Object] | []      | The data to be displayed see (data)[#data] section        |
+| columns    | [Object] | []      | The column configuration, see (columns)[#columns] section |
+| loading    | boolean  | false   | Whether or not data is being loaded                       |
 
-```json
+### Data
+
+The given data to display in the spreadsheet. Each entry in the array will be turned into a row in the spreadsheet. The minimum format for each row is as below:
+
+```ts
 {
-  type: 'string', // The type (see below for more types)
-  key: 'template.name', // the key for the value in the data set
-  label: 'Template', // the label to give the column heading
-  dir:  'asc or desc' // the current sorting direction
-  element: 'ViewModel' // optional, required if type is link
+  id: string,           // The id of the row
+  isFavourite: boolean, // Whether this row has been favourited or not
+  isSelected: boolean   // Whether this row is currently being selected
 }
 ```
 
-Column Types:
-* string - normal string
-* select - a select box to choose the entire row with
-* favourite - a favourite star to favourite the entire row with
-* date - a date formatted using date-fns
-* custom - a custom component, using compose, so must add an additional element in the config which will be a custom view model for this item.
+### Columns
+
+The columns of the spreadsheet are adjusted based on a given configuration. The configuration object for each column are as follows:
+
+```js
+{
+  type: string,         // The type (see below for more types)
+  key: string,          // the key for the value in the data set, e.g. name or address.suburb
+  label: string,        // the label to give the column heading
+  dir:  'asc' || 'desc' // the current sorting direction
+  element: viewModel    // optional, required if type is custom
+}
+```
+
+| Column Type | description                                       |
+|-------------|---------------------------------------------------|
+| string      | Display as string                                 |
+| select      | a select box to choose the entire row with        |
+| favourite   | a favourite star to favourite the entire row with |
+| date        | Date formatted using `date-fns`                   |
+| custom      | a custom component, using `compose`, so must add an additional `element` in the config which will be a custom view model for this item |
+
+An example of a custom view-model that can be used for the custom column type:
 
 ```js
 // Example of the view model, when using a custom component
@@ -43,15 +55,15 @@ Column Types:
 class TemplateViewLink {}
 ```
 
-## Events
+### Events
 
 The component emits certain HTML Events
 
-### `spreadsheet-heading-click`
+#### `spreadsheet-heading-click`
 
 Emitted when the one of the headings in the spreadsheet is clicked. This could be used to determine the sorting direction.
 
-### `favourite-click`
+#### `favourite-click`
 
 Emitted when the favourite column is toggled for that row. The details of the event is as below:
 
@@ -62,7 +74,7 @@ Emitted when the favourite column is toggled for that row. The details of the ev
 }
 ```
 
-### `select-click`
+#### `select-click`
 
 Emitted when the selection column is toggled for that row. The details of the event is as below:
 
@@ -73,6 +85,6 @@ Emitted when the selection column is toggled for that row. The details of the ev
 }
 ```
 
-### `scroll-end`
+#### `scroll-end`
 
 Emitted when the spreadsheet has scrolled to the end. This requires the component to be scrollable using `CSS`. Useful for when creating an infinity scroll for the spreadsheet.

@@ -31,6 +31,8 @@ export async function configure(aurelia: Aurelia) {
 }
 ```
 
+For documentation on how to use the components individually, see [here](src/components/components.md)
+
 ## Development
 
 ### NPM

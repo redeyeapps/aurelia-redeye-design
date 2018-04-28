@@ -1,4 +1,4 @@
-System.register(["./form/form", "./form/form-checkbox", "./form/form-number", "./form/form-radio", "./form/form-scale", "./form/form-select", "./form/form-text", "./form/form-textarea", "./layout/navbar/navbar", "./components/avatar/avatar", "./components/dropdown/dropdown", "./components/spreadsheet/spreadsheet", "./components/tile-list/tile-list"], function (exports_1, context_1) {
+System.register(["./components/form/form", "./components/form/form-checkbox", "./components/form/form-number", "./components/form/form-radio", "./components/form/form-scale", "./components/form/form-select", "./components/form/form-text", "./components/form/form-textarea", "./layout/navbar/navbar", "./components/avatar/avatar", "./components/dropdown/dropdown", "./components/spreadsheet/spreadsheet", "./components/tile-list/tile-list"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {

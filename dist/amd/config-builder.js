@@ -25,14 +25,14 @@ define(["require", "exports", "aurelia-pal"], function (require, exports, aureli
             return this;
         };
         ConfigBuilder.prototype.useForm = function () {
-            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form'));
-            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-checkbox'));
-            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-number'));
-            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-radio'));
-            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-scale'));
-            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-select'));
-            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-text'));
-            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./form/form-textarea'));
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/form/form'));
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/form/form-checkbox'));
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/form/form-number'));
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/form/form-radio'));
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/form/form-scale'));
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/form/form-select'));
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/form/form-text'));
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/form/form-textarea'));
             return this;
         };
         ConfigBuilder.prototype.useAvatar = function () {
