@@ -2,8 +2,8 @@
 
 For documentation on each of the components:
 
-* [avatar](src/components/avatar/avatar.md)
-* [dropdown](src/components/dropdown/dropdown.md)
+* [avatar](avatar/avatar.md)
+* [dropdown](dropdown/dropdown.md)
 * Form:
-  * [form-text](src/components/form/form-text.md)
-* [spreadsheet](src/components/spreadsheet/spreadsheet.md)
+  * [form-text](form/form-text.md)
+* [spreadsheet](spreadsheet/spreadsheet.md)
