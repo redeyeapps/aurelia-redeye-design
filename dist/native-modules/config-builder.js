@@ -23,14 +23,14 @@ var ConfigBuilder = /** @class */ (function () {
         return this;
     };
     ConfigBuilder.prototype.useForm = function () {
-        this.globalResources.push(PLATFORM.moduleName('./form/form'));
-        this.globalResources.push(PLATFORM.moduleName('./form/form-checkbox'));
-        this.globalResources.push(PLATFORM.moduleName('./form/form-number'));
-        this.globalResources.push(PLATFORM.moduleName('./form/form-radio'));
-        this.globalResources.push(PLATFORM.moduleName('./form/form-scale'));
-        this.globalResources.push(PLATFORM.moduleName('./form/form-select'));
-        this.globalResources.push(PLATFORM.moduleName('./form/form-text'));
-        this.globalResources.push(PLATFORM.moduleName('./form/form-textarea'));
+        this.globalResources.push(PLATFORM.moduleName('./components/form/form'));
+        this.globalResources.push(PLATFORM.moduleName('./components/form/form-checkbox'));
+        this.globalResources.push(PLATFORM.moduleName('./components/form/form-number'));
+        this.globalResources.push(PLATFORM.moduleName('./components/form/form-radio'));
+        this.globalResources.push(PLATFORM.moduleName('./components/form/form-scale'));
+        this.globalResources.push(PLATFORM.moduleName('./components/form/form-select'));
+        this.globalResources.push(PLATFORM.moduleName('./components/form/form-text'));
+        this.globalResources.push(PLATFORM.moduleName('./components/form/form-textarea'));
         return this;
     };
     ConfigBuilder.prototype.useAvatar = function () {
