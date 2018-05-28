@@ -2,7 +2,7 @@
   <div class="form ${inline ? 'form--inline' : ''}">
     <div class="form__range">
       <button class="btn btn--transparent" click.delegate="decrementValue()">
-        <i class="form__range-icon redeye-chevron-left wfm-left-chevron"></i>
+        <i class="form__range-icon wfm-left-chevron"></i>
       </button>
       <input
         type="range"
@@ -14,10 +14,10 @@
         re-form-min="${min}" re-form-max="${max}" re-form-step="${step}"
         />
       <button class="btn btn--transparent" click.delegate="incrementValue()">
-        <i class="form__range-icon redeye-chevron-right wfm-right-chevron"></i>
+        <i class="form__range-icon wfm-right-chevron"></i>
       </button>
     </div>
-    <div class="form__range-value">${value} / ${max}${suffix}</div>
+    <div class="form__range-value">${value} / ${max} ${suffix}</div>
     <label if.bind="hint.length" class="form__hint">${hint}</label>
   </div>
 </template>
