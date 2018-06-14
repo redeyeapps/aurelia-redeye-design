@@ -1,6 +1,6 @@
 {
   "name": "aurelia-redeye-design",
-  "version": "1.8.2",
+  "version": "1.8.5",
   "description": "An Aurelia Component Library based on the RedEye Design Pattern.",
   "keywords": [
     "plugin",
@@ -38,7 +38,9 @@
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js",
       "^.+\\.(scss|css)$": "<rootDir>/node_modules/jest-css-modules"
     },
-    "testRegex": "\\.spec\\.(ts|js)x?$",
+    "testMatch": [
+      "**/src/**/*.spec.{js,ts}"
+    ],
     "setupFiles": [
       "<rootDir>/test/jest-pretest.ts"
     ],

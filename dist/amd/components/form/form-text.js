@@ -62,6 +62,8 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
             this._validate();
         };
         ReFormText.prototype._validate = function () {
+            if (!this.value)
+                this.value = '';
             if (this.value.length) {
                 this.validated = this._regex.test(this.value);
                 this.hint = !this.validated && this.errorMessage || '';
