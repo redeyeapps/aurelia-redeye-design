@@ -1,7 +1,10 @@
 <template>
   <div class="form ${inline ? 'form--inline' : ''}">
     <div class="form__range">
-      <button class="btn btn--transparent" click.delegate="decrementValue()">
+      <button
+        class="btn btn--transparent"
+        re-form-disabled="${disabled}"
+        click.delegate="decrementValue()">
         <i class="form__range-icon wfm-left-chevron"></i>
       </button>
       <input
@@ -13,7 +16,10 @@
         re-form-disabled="${disabled}" re-form-readonly="${readonly}"
         re-form-min="${min}" re-form-max="${max}" re-form-step="${step}"
         />
-      <button class="btn btn--transparent" click.delegate="incrementValue()">
+      <button
+        class="btn btn--transparent"
+        re-form-disabled="${disabled}"
+        click.delegate="incrementValue()">
         <i class="form__range-icon wfm-right-chevron"></i>
       </button>
     </div>
