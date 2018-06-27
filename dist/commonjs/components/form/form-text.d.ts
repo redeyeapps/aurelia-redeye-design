@@ -19,9 +19,9 @@ export declare class ReFormText {
     typeChanged(n: string): void;
     patternChanged(): void;
     attached(): void;
-    private _resetRegex(newType?);
+    private _resetRegex;
     handleBlur(): void;
-    private _validate();
+    private _validate;
     readonly isError: boolean;
     readonly isSuccess: boolean | null;
 }

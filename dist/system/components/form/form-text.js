@@ -6,8 +6,8 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
         else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
-    var __moduleName = context_1 && context_1.id;
     var aurelia_templating_1, aurelia_binding_1, ReFormText;
+    var __moduleName = context_1 && context_1.id;
     return {
         setters: [
             function (aurelia_templating_1_1) {
@@ -56,7 +56,7 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
                     var type = newType || this.type;
                     switch (type) {
                         case 'email':
-                            this._regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            this._regex = /^(([^<>\[\]\\.,;:\s@"]+(\.[^<>\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                             this.errorMessage = 'Please enter a correct email address';
                             break;
                         case 'phone':
