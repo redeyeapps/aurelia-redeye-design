@@ -1,7 +1,7 @@
 System.register(["date-fns"], function (exports_1, context_1) {
     "use strict";
-    var date_fns_1, DateValueConverter;
     var __moduleName = context_1 && context_1.id;
+    var date_fns_1, DateValueConverter;
     return {
         setters: [
             function (date_fns_1_1) {

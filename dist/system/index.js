@@ -1,6 +1,5 @@
 System.register(["./config-builder", "./exports"], function (exports_1, context_1) {
     "use strict";
-    var config_builder_1;
     var __moduleName = context_1 && context_1.id;
     function configure(aurelia, configCallback) {
         var builder = aurelia.container.get(config_builder_1.ConfigBuilder);
@@ -12,6 +11,7 @@ System.register(["./config-builder", "./exports"], function (exports_1, context_
         }
     }
     exports_1("configure", configure);
+    var config_builder_1;
     var exportedNames_1 = {
         "configure": true
     };

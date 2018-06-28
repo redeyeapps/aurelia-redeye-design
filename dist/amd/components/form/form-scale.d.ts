@@ -14,5 +14,5 @@ export declare class ReFormScale {
     suffix: string;
     incrementValue(): void;
     decrementValue(): void;
-    private _incrementValue;
+    private _incrementValue(direction?);
 }
