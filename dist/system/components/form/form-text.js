@@ -56,7 +56,7 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
                     var type = newType || this.type;
                     switch (type) {
                         case 'email':
-                            this._regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            this._regex = /^(([^<>\[\]\\.,;:\s@"]+(\.[^<>\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                             this.errorMessage = 'Please enter a correct email address';
                             break;
                         case 'phone':
