@@ -59,6 +59,7 @@ export class ConfigBuilder {
 
   useValueConverters(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./value-converters/get-value'));
+    this.globalResources.push(PLATFORM.moduleName('./value-converters/change-text-case'));
     return this;
   }
 
