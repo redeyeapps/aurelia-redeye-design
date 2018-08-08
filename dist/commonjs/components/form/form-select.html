@@ -6,7 +6,7 @@
         re-form-disabled="${disabled}" re-form-disabled="${readonly}">
         <option value="" disabled>Choose an option</option>
         <option repeat.for="option of options"
-          value.bind="option">${option.label || option}</option>
+          value.bind="option.value || option">${option.label || option}</option>
       </select>
       <div class="form__line"></div>
     </div>

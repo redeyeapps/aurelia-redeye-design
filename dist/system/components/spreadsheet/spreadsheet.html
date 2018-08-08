@@ -37,7 +37,7 @@
                 </label>
               </div>
             </div>
-            <span if.bind="column.type === 'string'">${row | getValue:column.key}</span>
+            <span if.bind="column.type === 'string'">${row | getValue:column.key | changeTextCase: column.case}</span>
             <span if.bind="column.type === 'date'">${row | getValue:column.key | date}</span>
             <span if.bind="column.type === 'custom'">
               <compose view-model.bind="column.element" containerless></compose></span>

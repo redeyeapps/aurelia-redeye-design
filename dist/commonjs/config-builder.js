@@ -53,6 +53,7 @@ var ConfigBuilder = /** @class */ (function () {
     };
     ConfigBuilder.prototype.useValueConverters = function () {
         this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./value-converters/get-value'));
+        this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./value-converters/change-text-case'));
         return this;
     };
     ConfigBuilder.prototype.useCustomAtrributes = function () {
