@@ -49,7 +49,8 @@ export class ReSpreadsheet {
     if (row) {
       dispatchEvent(this.element, 'select-click', {
         id,
-        isSelected: row.isSelected
+        isSelected: row.isSelected,
+        row
       });
     }
   }
@@ -82,6 +83,7 @@ export class ReSpreadsheet {
     if (this.data.filter(val => val.isSelected).length > 0) {
       const idx = this.data.findIndex(val => val.id === row.id);
       this.data[idx].isSelected = !this.data[idx].isSelected;
+      this.toggleSelected(row.id);
       return false;
     }
 
