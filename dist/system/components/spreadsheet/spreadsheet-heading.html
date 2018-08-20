@@ -1,0 +1,7 @@
+<template>
+  <a href="javascript:void(0)" click.delegate="click($event)">
+    <span>${column.label || column.key || ''}</span>
+    <i show.bind="column.dir === 'desc'" class="redeye-chevron-down wfm-down-dir"></i>
+    <i show.bind="column.dir === 'asc'" class="redeye-chevron-up wfm-up-dir"></i>
+  </a>
+</template>

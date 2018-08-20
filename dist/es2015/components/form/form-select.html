@@ -1,0 +1,15 @@
+<template>
+  <div class="form ${inline ? 'form--inline' : ''}">
+    <div class="form__input">
+      <label for="" class="form__label" if.bind="label.length">${label}</label>
+      <select name="${name}" value.bind="value"
+        re-form-disabled="${disabled}" re-form-disabled="${readonly}">
+        <option value="" disabled>Choose an option</option>
+        <option repeat.for="option of options"
+          value.bind="option.value || option">${option.label || option}</option>
+      </select>
+      <div class="form__line"></div>
+    </div>
+    <label class="form__hint" if.bind="hint.length">${hint}</label>
+  </div>
+</template>

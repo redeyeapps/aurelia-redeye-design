@@ -1,0 +1,52 @@
+<template>
+  <require from="./spreadsheet-heading"></require>
+  <require from="../../value-converters/date"></require>
+  <div class="spreadsheet" scroll.trigger="handleScroll($event)">
+    <table class="table--clickable">
+      <colgroup>
+        <col repeat.for="column of columns" width="${column.responsive ? (100 / responsiveCols) : '1'}%"/>
+      </colgroup>
+      <thead>
+        <tr>
+          <td repeat.for="column of columns">
+            <re-spreadsheet-heading
+              if.bind="['select', 'favourite'].indexOf(column.type) === -1"
+              column.bind="column"></re-spreadsheet-heading>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr repeat.for="row of data"
+          class="${row.isSelected ?  'active' : ''}"
+          click.delegate="handleRowClick($event, row)">
+          <td repeat.for="column of columns" css="${ column.responsive ? 'max-width: 1px;' : ''}">
+            <div class="form form--no-padding" if.bind="column.type === 'select'">
+              <div class="form__checkbox">
+                <label class="form__option form__option--no-padding">
+                  <input type="checkbox" checked.bind="row.isSelected" change.delegate="toggleSelected(row.id)">
+                  <i class="form__option__icon redeye-check wfm-ok"></i>
+                </label>
+              </div>
+            </div>
+            <div class="form form--no-padding" if.bind="column.type === 'favourite'">
+              <div class="form__checkbox">
+                <label class="form__option form__option--use-icon form__option--no-padding">
+                  <input type="checkbox" checked.bind="row.isFavourite" change.delegate="toggleFavourite(row.id)">
+                  <i class="form__option__icon form__option__icon--unchecked redeye-star-empty wfm-star-empty"></i>
+                  <i class="form__option__icon form__option__icon--checked redeye-star wfm-star"></i>
+                </label>
+              </div>
+            </div>
+            <span if.bind="column.type === 'string'">${row | getValue:column.key | changeTextCase: column.case}</span>
+            <span if.bind="column.type === 'date'">${row | getValue:column.key | date}</span>
+            <span if.bind="column.type === 'custom'">
+              <compose view-model.bind="column.element" containerless></compose></span>
+          </td>
+        </tr>
+        <tr if.bind="loading" repeat.for="i of 5" class="row--loading">
+            <td repeat.for="column of columns"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>

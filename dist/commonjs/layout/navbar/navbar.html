@@ -1,0 +1,13 @@
+<template>
+    <header class="navbar" css="background-color: ${color};">
+      <section class="navbar__section">
+        <a href="/" class="navbar__brand">
+          <img src="${appLogo}" alt="RedEye Logo" class="navbar__brand-image">
+            ${appTitle}
+        </a>
+      </section>
+      <section class="navbar__section">
+        <slot></slot>
+      </section>
+    </header>
+</template>

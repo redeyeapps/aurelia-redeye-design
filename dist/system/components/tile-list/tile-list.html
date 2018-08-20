@@ -1,0 +1,18 @@
+<template>
+  <div class="tile-list tile-list--hover">
+    <div class="tile tile--centered tile--nowrap ${row.isActive ? 'active' : ''}" repeat.for="row of data"
+      click.delegate="handleTileClick(row)">
+      <div class="tile__icon">
+        <i class="${config[row.entityType].icon.class}"></i>
+      </div>
+      <div class="tile__content">
+        <p class="tile__title">${row[config[row.entityType].content.title.key]}</p>
+        <p class="tile__subtitle text-gray">${row[config[row.entityType].content.subtitle.key]}</p>
+      </div>
+    </div>
+    <div if.bind="loading" repeat.for="i of 5" class="tile tile--loading">
+        <div class="tile__icon"></div>
+        <div class="tile__content"></div>
+    </div>
+  </div>
+</template>
