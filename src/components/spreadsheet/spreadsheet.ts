@@ -55,13 +55,13 @@ export class ReSpreadsheet {
     }
   }
 
-  columnsChanged(nv: {responsive: boolean}[] ) {
+  columnsChanged(nv: { responsive: boolean }[]) {
     this.responsiveCols = nv && nv.length ? nv.filter(val => val.responsive).length : 1;
   }
 
   handleScroll = debounce(this.scrolled, 300);
   handleScrollBound = this.handleScroll.bind(this);
-  
+
   scrolled(evt: Event) {
     const target = <HTMLElement> evt.target;
     // dispatch the event when the scroll reaches about 90% of the way down.

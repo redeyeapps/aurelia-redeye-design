@@ -24,7 +24,7 @@ export class ReFormScale {
   @bindable({
     defaultBindingMode: bindingMode.oneWay
   }) hint = '';
-  
+
   @bindable({
     defaultBindingMode: bindingMode.twoWay
   }) value = '';
@@ -55,11 +55,11 @@ export class ReFormScale {
   }
 
   private _incrementValue(direction = 'asc') {
-    const step = direction === 'asc' ? parseInt(this.step) : -1 * parseInt(this.step)
-    const newValue = parseInt(this.value) + step;
-    if (newValue > parseInt(this.max)) {
+    const step = direction === 'asc' ? parseInt(this.step, 10) : -1 * parseInt(this.step, 10);
+    const newValue = parseInt(this.value, 10) + step;
+    if (newValue > parseInt(this.max, 10)) {
       this.value = this.max;
-    } else if (newValue < parseInt(this.min)) {
+    } else if (newValue < parseInt(this.min, 10)) {
       this.value = this.min;
     } else {
       this.value = newValue.toString();

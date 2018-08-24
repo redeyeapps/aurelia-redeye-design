@@ -24,7 +24,7 @@ export class ReFormTextarea {
   @bindable({
     defaultBindingMode: bindingMode.oneWay
   }) hint = '';
-    
+
   @bindable({
     defaultBindingMode: bindingMode.twoWay
   }) value = '';

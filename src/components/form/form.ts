@@ -4,8 +4,6 @@ import { bindingMode } from 'aurelia-binding';
 @customElement('re-form')
 export class ReForm {
   static id = 0;
-  // private input: HTMLElement | null = null;
-  
   @bindable({
     defaultBindingMode: bindingMode.oneTime
   }) type = 'text';
@@ -29,7 +27,7 @@ export class ReForm {
   @bindable({
     defaultBindingMode: bindingMode.oneTime
   }) actionLabel = 'action';
-  
+
   @bindable({
     defaultBindingMode: bindingMode.twoWay
   }) value = '';
