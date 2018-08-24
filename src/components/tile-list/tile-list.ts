@@ -50,7 +50,7 @@ export class ReTileList {
 
   handleScroll = debounce(this.scrolled, 300);
   handleScrollBound = this.handleScroll.bind(this);
-  
+
   scrolled(evt: Event) {
     const target = <HTMLElement> evt.target;
     // dispatch the event when the scroll reaches about 90% of the way down.

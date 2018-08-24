@@ -15,7 +15,7 @@ export class ReDropdown {
 
   detached() {
     // Clean up event listeners
-    this._removeEventListener();
+    this.removeEventListener();
   }
 
   handleButtonClick() {
@@ -25,26 +25,26 @@ export class ReDropdown {
       document.addEventListener('click', this, false);
     } else {
       // And remove the listener
-      this._removeEventListener();
+      this.removeEventListener();
     }
   }
 
-  _clickEventHandler(evt: Event) {
+  private clickEventHandler(evt: Event) {
     const target = <HTMLElement> evt.target;
     if (!this.menuEl.contains(target) ||
         !target.hasAttribute('no-close')) {
       this.menuOpen = false;
-      this._removeEventListener();
+      this.removeEventListener();
     }
   }
 
-  _removeEventListener() {
+  private removeEventListener() {
     document.removeEventListener('click', this, false);
   }
 
   handleEvent(evt: Event) {
     if (evt.type === 'click') {
-      this._clickEventHandler(evt);
+      this.clickEventHandler(evt);
     }
   }
 }

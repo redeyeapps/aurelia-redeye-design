@@ -24,7 +24,7 @@ export class ReFormNumber {
   @bindable({
     defaultBindingMode: bindingMode.oneWay
   }) hint = '';
-  
+
   @bindable({
     defaultBindingMode: bindingMode.twoWay
   }) value = '';

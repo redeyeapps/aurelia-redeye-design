@@ -1,11 +1,23 @@
 {
+  // Extend airBnBs linter
+  "extends": "tslint-config-airbnb",
   "rules": {
-    "quotemark": [true, "single"],
-    "object-literal-sort-keys": false,
-    "ordered-imports": [false],
-    "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-module", "check-separator", "check-type"],
-    "interface-name": [true, "never-prefix"],
-    "no-shadowed-variable": false,
-    "no-string-literal": false
+      "trailing-comma": [true, {"singleline": "never", "multiline": "never"}],
+      "object-shorthand-properties-first": false,
+      "import-name": false,
+      "function-name": [
+          true,
+          {
+              "private-method-regex": "^_?[a-z][\\w\\d]+$",
+              "protected-method-regex": "^_?[a-z][\\w\\d]+$"
+          }
+      ],
+      "variable-name": [
+          true,
+          "check-format",
+          "allow-leading-underscore",
+          "allow-pascal-case"
+      ],
+      "strict-boolean-expressions": false
   }
 }
