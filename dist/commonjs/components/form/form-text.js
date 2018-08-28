@@ -46,10 +46,12 @@ var ReFormText = /** @class */ (function () {
         var type = newType || this.type;
         switch (type) {
             case 'email':
+                // tslint:disable-next-line:max-line-length
                 this._regex = /^(([^<>\[\]\\.,;:\s@"]+(\.[^<>\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 this.errorMessage = 'Please enter a correct email address';
                 break;
             case 'phone':
+                // tslint:disable-next-line:max-line-length
                 this._regex = /^\({0,1}((0|\+61)(2|4|3|7|8)){0,1}\){0,1}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{1}(\ |-){0,1}[0-9]{3}$/;
                 this.errorMessage = 'Please enter a correct phone number';
                 break;

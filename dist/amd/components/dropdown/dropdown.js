@@ -15,7 +15,7 @@ define(["require", "exports", "aurelia-binding", "aurelia-templating"], function
         }
         ReDropdown.prototype.detached = function () {
             // Clean up event listeners
-            this._removeEventListener();
+            this.removeEventListener();
         };
         ReDropdown.prototype.handleButtonClick = function () {
             this.menuOpen = !this.menuOpen;
@@ -25,23 +25,23 @@ define(["require", "exports", "aurelia-binding", "aurelia-templating"], function
             }
             else {
                 // And remove the listener
-                this._removeEventListener();
+                this.removeEventListener();
             }
         };
-        ReDropdown.prototype._clickEventHandler = function (evt) {
+        ReDropdown.prototype.clickEventHandler = function (evt) {
             var target = evt.target;
             if (!this.menuEl.contains(target) ||
                 !target.hasAttribute('no-close')) {
                 this.menuOpen = false;
-                this._removeEventListener();
+                this.removeEventListener();
             }
         };
-        ReDropdown.prototype._removeEventListener = function () {
+        ReDropdown.prototype.removeEventListener = function () {
             document.removeEventListener('click', this, false);
         };
         ReDropdown.prototype.handleEvent = function (evt) {
             if (evt.type === 'click') {
-                this._clickEventHandler(evt);
+                this.clickEventHandler(evt);
             }
         };
         __decorate([

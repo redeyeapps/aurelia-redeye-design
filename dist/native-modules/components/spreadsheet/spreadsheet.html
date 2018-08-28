@@ -19,7 +19,9 @@
         <tr repeat.for="row of data"
           class="${row.isSelected ?  'active' : ''}"
           click.delegate="handleRowClick($event, row)">
-          <td repeat.for="column of columns" css="${ column.responsive ? 'max-width: 1px;' : ''}">
+          <td repeat.for="column of columns"
+            css="${ column.responsive ? 'max-width: 1px;' : ''}"
+            class="${column.extraClass}">
             <div class="form form--no-padding" if.bind="column.type === 'select'">
               <div class="form__checkbox">
                 <label class="form__option form__option--no-padding">

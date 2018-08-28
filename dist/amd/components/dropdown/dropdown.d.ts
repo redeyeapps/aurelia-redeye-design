@@ -5,7 +5,7 @@ export declare class ReDropdown {
     private menuEl;
     detached(): void;
     handleButtonClick(): void;
-    _clickEventHandler(evt: Event): void;
-    _removeEventListener(): void;
+    private clickEventHandler(evt);
+    private removeEventListener();
     handleEvent(evt: Event): void;
 }

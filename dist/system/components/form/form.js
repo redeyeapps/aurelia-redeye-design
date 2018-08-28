@@ -20,7 +20,6 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
         execute: function () {
             ReForm = /** @class */ (function () {
                 function ReForm() {
-                    // private input: HTMLElement | null = null;
                     this.type = 'text';
                     this.textarea = false;
                     this.label = '';

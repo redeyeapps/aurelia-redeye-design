@@ -1,3 +1,4 @@
+/* tslint:disable:no-this-assignment */
 export function debounce(func, wait, immediate) {
     var timeout;
     return function () {
