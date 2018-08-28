@@ -11,7 +11,7 @@ define(["require", "exports"], function (require, exports) {
             for (var _i = 1; _i < arguments.length; _i++) {
                 types[_i - 1] = arguments[_i];
             }
-            if (!types.length || types[0] == undefined)
+            if (!types.length || types[0] === undefined)
                 return str;
             var temp = str;
             for (var _a = 0, types_1 = types; _a < types_1.length; _a++) {

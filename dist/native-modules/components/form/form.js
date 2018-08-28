@@ -8,7 +8,6 @@ import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
 var ReForm = /** @class */ (function () {
     function ReForm() {
-        // private input: HTMLElement | null = null;
         this.type = 'text';
         this.textarea = false;
         this.label = '';

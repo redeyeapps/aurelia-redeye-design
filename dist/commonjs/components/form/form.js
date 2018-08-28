@@ -10,7 +10,6 @@ var aurelia_templating_1 = require("aurelia-templating");
 var aurelia_binding_1 = require("aurelia-binding");
 var ReForm = /** @class */ (function () {
     function ReForm() {
-        // private input: HTMLElement | null = null;
         this.type = 'text';
         this.textarea = false;
         this.label = '';

@@ -33,7 +33,10 @@ The columns of the spreadsheet are adjusted based on a given configuration. The 
   key: string,          // the key for the value in the data set, e.g. name or address.suburb
   label: string,        // the label to give the column heading
   dir:  'asc' || 'desc' // the current sorting direction
-  element: viewModel    // optional, required if type is custom
+  element: viewModel,   // optional, required if type is custom
+  sortKey: string,      // optional, the key to sort the column by (if not given, will use the key)
+  responsive: Boolean,  // optional, whether or not the column should be responsive in length
+  extraClass: string    // optional, extra class names to be appended to the class of the column, applied to the td element
 }
 ```
 

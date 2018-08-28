@@ -30,12 +30,12 @@ var ReFormScale = /** @class */ (function () {
     };
     ReFormScale.prototype._incrementValue = function (direction) {
         if (direction === void 0) { direction = 'asc'; }
-        var step = direction === 'asc' ? parseInt(this.step) : -1 * parseInt(this.step);
-        var newValue = parseInt(this.value) + step;
-        if (newValue > parseInt(this.max)) {
+        var step = direction === 'asc' ? parseInt(this.step, 10) : -1 * parseInt(this.step, 10);
+        var newValue = parseInt(this.value, 10) + step;
+        if (newValue > parseInt(this.max, 10)) {
             this.value = this.max;
         }
-        else if (newValue < parseInt(this.min)) {
+        else if (newValue < parseInt(this.min, 10)) {
             this.value = this.min;
         }
         else {

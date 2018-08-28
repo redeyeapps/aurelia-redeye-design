@@ -9,7 +9,6 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
     Object.defineProperty(exports, "__esModule", { value: true });
     var ReForm = /** @class */ (function () {
         function ReForm() {
-            // private input: HTMLElement | null = null;
             this.type = 'text';
             this.textarea = false;
             this.label = '';

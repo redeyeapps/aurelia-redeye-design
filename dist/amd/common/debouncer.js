@@ -1,6 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /* tslint:disable:no-this-assignment */
     function debounce(func, wait, immediate) {
         var timeout;
         return function () {

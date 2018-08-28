@@ -1,6 +1,7 @@
 System.register([], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
+    /* tslint:disable:no-this-assignment */
     function debounce(func, wait, immediate) {
         var timeout;
         return function () {
