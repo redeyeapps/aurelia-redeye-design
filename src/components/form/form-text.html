@@ -9,6 +9,7 @@
         re-form-maxlength="${maxlength}"
         re-form-disabled="${disabled}" re-form-readonly="${readonly}"
         blur.trigger="handleBlur($event)"
+        keyup.delegate="handleKeyup($event)"
         />
       <label if.bind="label.length" class="form__label">${label}</label>
       <div class="form__line"></div>
