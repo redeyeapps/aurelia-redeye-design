@@ -24,6 +24,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
             this.pattern = null;
             this.patternError = '';
             this.validated = null;
+            this.validateOnKeyup = null;
             this._regex = /./;
             this.errorMessage = '';
         }
@@ -62,6 +63,11 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
         };
         ReFormText.prototype.handleBlur = function () {
             this._validate();
+        };
+        ReFormText.prototype.handleKeyup = function () {
+            if (this.validateOnKeyup) {
+                this._validate();
+            }
         };
         ReFormText.prototype._validate = function () {
             if (!this.value)
@@ -166,6 +172,11 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding"], function
                 defaultBindingMode: aurelia_binding_1.bindingMode.twoWay
             })
         ], ReFormText.prototype, "validated", void 0);
+        __decorate([
+            aurelia_templating_1.bindable({
+                defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
+            })
+        ], ReFormText.prototype, "validateOnKeyup", void 0);
         ReFormText = __decorate([
             aurelia_templating_1.customElement('re-form-text')
         ], ReFormText);

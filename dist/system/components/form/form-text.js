@@ -6,8 +6,8 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
         else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
-    var __moduleName = context_1 && context_1.id;
     var aurelia_templating_1, aurelia_binding_1, ReFormText;
+    var __moduleName = context_1 && context_1.id;
     return {
         setters: [
             function (aurelia_templating_1_1) {
@@ -35,6 +35,7 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
                     this.pattern = null;
                     this.patternError = '';
                     this.validated = null;
+                    this.validateOnKeyup = null;
                     this._regex = /./;
                     this.errorMessage = '';
                 }
@@ -73,6 +74,11 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
                 };
                 ReFormText.prototype.handleBlur = function () {
                     this._validate();
+                };
+                ReFormText.prototype.handleKeyup = function () {
+                    if (this.validateOnKeyup) {
+                        this._validate();
+                    }
                 };
                 ReFormText.prototype._validate = function () {
                     if (!this.value)
@@ -177,6 +183,11 @@ System.register(["aurelia-templating", "aurelia-binding"], function (exports_1, 
                         defaultBindingMode: aurelia_binding_1.bindingMode.twoWay
                     })
                 ], ReFormText.prototype, "validated", void 0);
+                __decorate([
+                    aurelia_templating_1.bindable({
+                        defaultBindingMode: aurelia_binding_1.bindingMode.oneWay
+                    })
+                ], ReFormText.prototype, "validateOnKeyup", void 0);
                 ReFormText = __decorate([
                     aurelia_templating_1.customElement('re-form-text')
                 ], ReFormText);

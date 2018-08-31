@@ -54,6 +54,10 @@ export class ReFormText {
     defaultBindingMode: bindingMode.twoWay
   }) validated: null | boolean = null;
 
+  @bindable({
+    defaultBindingMode: bindingMode.oneWay
+  }) validateOnKeyup: null | boolean = null;
+
   private _regex: RegExp = /./;
   private errorMessage: string = '';
 
@@ -96,6 +100,12 @@ export class ReFormText {
 
   handleBlur() {
     this._validate();
+  }
+
+  handleKeyup() {
+    if (this.validateOnKeyup) {
+      this._validate();
+    }
   }
 
   private _validate() {
