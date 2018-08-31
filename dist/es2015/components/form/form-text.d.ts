@@ -14,14 +14,16 @@ export declare class ReFormText {
     pattern: RegExp | null;
     patternError: string;
     validated: null | boolean;
+    validateOnKeyup: null | boolean;
     private _regex;
     private errorMessage;
     typeChanged(n: string): void;
     patternChanged(): void;
     attached(): void;
-    private _resetRegex(newType?);
+    private _resetRegex;
     handleBlur(): void;
-    private _validate();
+    handleKeyup(): void;
+    private _validate;
     readonly isError: boolean;
     readonly isSuccess: boolean | null;
 }

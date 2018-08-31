@@ -8,8 +8,8 @@
         value.bind="value"
         re-form-maxlength="${maxlength}"
         re-form-disabled="${disabled}" re-form-readonly="${readonly}"
-        blur.trigger="handleBlur($event)"
-        keyup.delegate="handleKeyup($event)"
+        blur.trigger="handleBlur()"
+        keyup.delegate="handleKeyup() & debounce:300"
         />
       <label if.bind="label.length" class="form__label">${label}</label>
       <div class="form__line"></div>
