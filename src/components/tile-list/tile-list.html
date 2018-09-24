@@ -3,6 +3,7 @@
     <div class="tile tile--centered tile--nowrap ${row.isActive ? 'active' : ''}" repeat.for="row of data"
       click.delegate="handleTileClick(row)">
       <div class="tile__icon">
+        <img if.bind="config[row.entityType].icon.image" src="${config[row.entityType].icon.image}" alt=""></img>
         <i class="${config[row.entityType].icon.class}"></i>
       </div>
       <div class="tile__content">
@@ -11,8 +12,8 @@
       </div>
     </div>
     <div if.bind="loading" repeat.for="i of 5" class="tile tile--loading">
-        <div class="tile__icon"></div>
-        <div class="tile__content"></div>
+      <div class="tile__icon"></div>
+      <div class="tile__content"></div>
     </div>
   </div>
 </template>
