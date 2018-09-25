@@ -3,7 +3,7 @@
     <div class="tile tile--centered tile--nowrap ${row.isActive ? 'active' : ''}" repeat.for="row of data"
       click.delegate="handleTileClick(row)">
       <div class="tile__icon">
-        <img if.bind="config[row.entityType].icon.image" src="${config[row.entityType].icon.image}" alt=""></img>
+        <img if.bind="config[row.entityType].icon.image" src="${config[row.entityType].icon.image}" alt="">
         <i class="${config[row.entityType].icon.class}"></i>
       </div>
       <div class="tile__content">
