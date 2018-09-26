@@ -14,6 +14,7 @@ define(["require", "exports", "aurelia-pal"], function (require, exports, aureli
                 .useNavbar()
                 .useAvatar()
                 .useDropdown()
+                .useSearch()
                 .useSpreadsheet()
                 .useTileList()
                 .useValueConverters()
@@ -41,6 +42,10 @@ define(["require", "exports", "aurelia-pal"], function (require, exports, aureli
         };
         ConfigBuilder.prototype.useDropdown = function () {
             this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/dropdown/dropdown'));
+            return this;
+        };
+        ConfigBuilder.prototype.useSearch = function () {
+            this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/search/search'));
             return this;
         };
         ConfigBuilder.prototype.useSpreadsheet = function () {

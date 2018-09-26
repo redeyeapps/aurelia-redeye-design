@@ -22,6 +22,7 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                         .useNavbar()
                         .useAvatar()
                         .useDropdown()
+                        .useSearch()
                         .useSpreadsheet()
                         .useTileList()
                         .useValueConverters()
@@ -49,6 +50,10 @@ System.register(["aurelia-pal"], function (exports_1, context_1) {
                 };
                 ConfigBuilder.prototype.useDropdown = function () {
                     this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/dropdown/dropdown'));
+                    return this;
+                };
+                ConfigBuilder.prototype.useSearch = function () {
+                    this.globalResources.push(aurelia_pal_1.PLATFORM.moduleName('./components/search/search'));
                     return this;
                 };
                 ConfigBuilder.prototype.useSpreadsheet = function () {

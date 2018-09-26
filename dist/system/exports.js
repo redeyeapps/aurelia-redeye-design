@@ -1,4 +1,4 @@
-System.register(["./components/form/form", "./components/form/form-checkbox", "./components/form/form-number", "./components/form/form-radio", "./components/form/form-scale", "./components/form/form-select", "./components/form/form-text", "./components/form/form-textarea", "./layout/navbar/navbar", "./components/avatar/avatar", "./components/dropdown/dropdown", "./components/spreadsheet/spreadsheet", "./components/tile-list/tile-list"], function (exports_1, context_1) {
+System.register(["./components/form/form", "./components/form/form-checkbox", "./components/form/form-number", "./components/form/form-radio", "./components/form/form-scale", "./components/form/form-select", "./components/form/form-text", "./components/form/form-textarea", "./layout/navbar/navbar", "./components/avatar/avatar", "./components/dropdown/dropdown", "./components/spreadsheet/spreadsheet", "./components/search/search", "./components/tile-list/tile-list"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -45,6 +45,9 @@ System.register(["./components/form/form", "./components/form/form-checkbox", ".
             },
             function (spreadsheet_1_1) {
                 exportStar_1(spreadsheet_1_1);
+            },
+            function (search_1_1) {
+                exportStar_1(search_1_1);
             },
             function (tile_list_1_1) {
                 exportStar_1(tile_list_1_1);

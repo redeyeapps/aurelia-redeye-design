@@ -13,6 +13,7 @@ export class ConfigBuilder {
       .useNavbar()
       .useAvatar()
       .useDropdown()
+      .useSearch()
       .useSpreadsheet()
       .useTileList()
       .useValueConverters()
@@ -44,6 +45,11 @@ export class ConfigBuilder {
 
   useDropdown(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./components/dropdown/dropdown'));
+    return this;
+  }
+
+  useSearch(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./components/search/search'));
     return this;
   }
 
