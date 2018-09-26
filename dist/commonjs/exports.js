@@ -15,4 +15,5 @@ __export(require("./layout/navbar/navbar"));
 __export(require("./components/avatar/avatar"));
 __export(require("./components/dropdown/dropdown"));
 __export(require("./components/spreadsheet/spreadsheet"));
+__export(require("./components/search/search"));
 __export(require("./components/tile-list/tile-list"));

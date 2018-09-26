@@ -1,0 +1,32 @@
+import { Value } from './models';
+export declare class ReSearch {
+    searchValue: string;
+    selectedValue: string;
+    displayedValue: string;
+    options: Value[];
+    blurHandler: Function;
+    focusHandler: Function;
+    typingHandler: Function;
+    returnHandler: Function;
+    placeholder: string;
+    showDropdown: boolean;
+    verticalDisplayed: Value[];
+    horizontalDisplayed: Value[];
+    searchExpanded: boolean;
+    expandDropdown: boolean;
+    element: any | null;
+    constructor(element: any);
+    attached(): void;
+    detached(): void;
+    searchValueChanged(n: string): void;
+    handleClickEvent: (evt: MouseEvent) => void;
+    handleDropdownClick(): void;
+    selectedValueChanged(): void;
+    handleBlur(): void;
+    handleFocus(): void;
+    handleTyping(): void;
+    handleReturn(): void;
+    iconClick(): void;
+    filterOptions(): void;
+    handleTileClick(evt: any): void;
+}

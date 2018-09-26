@@ -9,6 +9,7 @@ export declare class ConfigBuilder {
     useForm(): ConfigBuilder;
     useAvatar(): ConfigBuilder;
     useDropdown(): ConfigBuilder;
+    useSearch(): ConfigBuilder;
     useSpreadsheet(): ConfigBuilder;
     useTileList(): ConfigBuilder;
     useValueConverters(): ConfigBuilder;
