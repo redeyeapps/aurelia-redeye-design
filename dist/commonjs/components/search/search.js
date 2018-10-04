@@ -76,6 +76,7 @@ var ReSearch = /** @class */ (function () {
             this.returnHandler();
     };
     ReSearch.prototype.iconClick = function () {
+        this.expandDropdown = false;
         this.searchExpanded = !this.searchExpanded;
         this.filterOptions();
     };

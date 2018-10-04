@@ -83,6 +83,7 @@ export class ReSearch {
   }
 
   iconClick() {
+    this.expandDropdown = false;
     this.searchExpanded = !this.searchExpanded;
     this.filterOptions();
   }

@@ -86,6 +86,7 @@ System.register(["aurelia-framework", "aurelia-binding"], function (exports_1, c
                         this.returnHandler();
                 };
                 ReSearch.prototype.iconClick = function () {
+                    this.expandDropdown = false;
                     this.searchExpanded = !this.searchExpanded;
                     this.filterOptions();
                 };
