@@ -26,7 +26,6 @@ System.register(["aurelia-framework", "aurelia-binding"], function (exports_1, c
                     this.displayedValue = '';
                     this.options = [];
                     this.placeholder = '';
-                    this.showDropdown = false;
                     this.verticalDisplayed = [];
                     this.horizontalDisplayed = [];
                     this.searchExpanded = false;
@@ -104,7 +103,7 @@ System.register(["aurelia-framework", "aurelia-binding"], function (exports_1, c
                     if (this.searchExpanded) {
                         this.expandDropdown = !this.expandDropdown;
                     }
-                    this.showDropdown = false;
+                    this.expandDropdown = false;
                     this.displayedValue = evt.target.innerText;
                     var selectedValue = this.options.find(function (f) {
                         return f.label === _this.displayedValue;
@@ -140,9 +139,6 @@ System.register(["aurelia-framework", "aurelia-binding"], function (exports_1, c
                 __decorate([
                     aurelia_framework_1.bindable
                 ], ReSearch.prototype, "placeholder", void 0);
-                __decorate([
-                    aurelia_framework_1.bindable
-                ], ReSearch.prototype, "showDropdown", void 0);
                 ReSearch = __decorate([
                     aurelia_framework_1.inject(Element)
                 ], ReSearch);

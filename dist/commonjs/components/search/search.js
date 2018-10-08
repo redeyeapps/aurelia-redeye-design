@@ -16,7 +16,6 @@ var ReSearch = /** @class */ (function () {
         this.displayedValue = '';
         this.options = [];
         this.placeholder = '';
-        this.showDropdown = false;
         this.verticalDisplayed = [];
         this.horizontalDisplayed = [];
         this.searchExpanded = false;
@@ -94,7 +93,7 @@ var ReSearch = /** @class */ (function () {
         if (this.searchExpanded) {
             this.expandDropdown = !this.expandDropdown;
         }
-        this.showDropdown = false;
+        this.expandDropdown = false;
         this.displayedValue = evt.target.innerText;
         var selectedValue = this.options.find(function (f) {
             return f.label === _this.displayedValue;
@@ -130,9 +129,6 @@ var ReSearch = /** @class */ (function () {
     __decorate([
         aurelia_framework_1.bindable
     ], ReSearch.prototype, "placeholder", void 0);
-    __decorate([
-        aurelia_framework_1.bindable
-    ], ReSearch.prototype, "showDropdown", void 0);
     ReSearch = __decorate([
         aurelia_framework_1.inject(Element)
     ], ReSearch);
