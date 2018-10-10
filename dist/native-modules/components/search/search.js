@@ -14,7 +14,6 @@ var ReSearch = /** @class */ (function () {
         this.displayedValue = '';
         this.options = [];
         this.placeholder = '';
-        this.showDropdown = false;
         this.verticalDisplayed = [];
         this.horizontalDisplayed = [];
         this.searchExpanded = false;
@@ -74,6 +73,7 @@ var ReSearch = /** @class */ (function () {
             this.returnHandler();
     };
     ReSearch.prototype.iconClick = function () {
+        this.expandDropdown = false;
         this.searchExpanded = !this.searchExpanded;
         this.filterOptions();
     };
@@ -91,7 +91,7 @@ var ReSearch = /** @class */ (function () {
         if (this.searchExpanded) {
             this.expandDropdown = !this.expandDropdown;
         }
-        this.showDropdown = false;
+        this.expandDropdown = false;
         this.displayedValue = evt.target.innerText;
         var selectedValue = this.options.find(function (f) {
             return f.label === _this.displayedValue;
@@ -127,9 +127,6 @@ var ReSearch = /** @class */ (function () {
     __decorate([
         bindable
     ], ReSearch.prototype, "placeholder", void 0);
-    __decorate([
-        bindable
-    ], ReSearch.prototype, "showDropdown", void 0);
     ReSearch = __decorate([
         inject(Element)
     ], ReSearch);

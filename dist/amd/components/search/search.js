@@ -15,7 +15,6 @@ define(["require", "exports", "aurelia-framework", "aurelia-binding"], function 
             this.displayedValue = '';
             this.options = [];
             this.placeholder = '';
-            this.showDropdown = false;
             this.verticalDisplayed = [];
             this.horizontalDisplayed = [];
             this.searchExpanded = false;
@@ -75,6 +74,7 @@ define(["require", "exports", "aurelia-framework", "aurelia-binding"], function 
                 this.returnHandler();
         };
         ReSearch.prototype.iconClick = function () {
+            this.expandDropdown = false;
             this.searchExpanded = !this.searchExpanded;
             this.filterOptions();
         };
@@ -92,7 +92,7 @@ define(["require", "exports", "aurelia-framework", "aurelia-binding"], function 
             if (this.searchExpanded) {
                 this.expandDropdown = !this.expandDropdown;
             }
-            this.showDropdown = false;
+            this.expandDropdown = false;
             this.displayedValue = evt.target.innerText;
             var selectedValue = this.options.find(function (f) {
                 return f.label === _this.displayedValue;
@@ -128,9 +128,6 @@ define(["require", "exports", "aurelia-framework", "aurelia-binding"], function 
         __decorate([
             aurelia_framework_1.bindable
         ], ReSearch.prototype, "placeholder", void 0);
-        __decorate([
-            aurelia_framework_1.bindable
-        ], ReSearch.prototype, "showDropdown", void 0);
         ReSearch = __decorate([
             aurelia_framework_1.inject(Element)
         ], ReSearch);

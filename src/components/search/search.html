@@ -17,8 +17,9 @@
    </div>
 
    <ul tabindex="0" class="dropdown">
-     <li click.delegate="handleDropdownClick()" class="search-tile ${searchExpanded ? 'search-tile--selected' : ''}">
+     <li click.delegate="handleDropdownClick()" class="search-tile search-tile--dropdown ${searchExpanded ? 'search-tile--selected' : ''}">
        ${ !searchExpanded ? 'More' : displayedValue}
+       <i class="wfm-angle-down btn__icon--right"></i>
      </li>
      <div class="dropdown-menu ${expandDropdown ? 'dropdown-menu--active' : ''}">
        <li click.delegate="handleTileClick($event)" repeat.for="option of verticalDisplayed" class="search-tile ${option.value === selectedValue ? 'search-tile--selected' : ''}">

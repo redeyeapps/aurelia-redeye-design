@@ -17,7 +17,6 @@ export class ReSearch {
   @bindable typingHandler: Function;
   @bindable returnHandler: Function;
   @bindable placeholder: string = '';
-  @bindable showDropdown = false;
   verticalDisplayed: Value[] = [];
   horizontalDisplayed: Value[] = [];
   searchExpanded: boolean = false;
@@ -83,6 +82,7 @@ export class ReSearch {
   }
 
   iconClick() {
+    this.expandDropdown = false;
     this.searchExpanded = !this.searchExpanded;
     this.filterOptions();
   }
@@ -100,7 +100,7 @@ export class ReSearch {
     if (this.searchExpanded) {
       this.expandDropdown = !this.expandDropdown;
     }
-    this.showDropdown = false;
+    this.expandDropdown = false;
     this.displayedValue = evt.target.innerText;
     const selectedValue: Value | undefined = this.options.find((f: Value) =>
       f.label === this.displayedValue);

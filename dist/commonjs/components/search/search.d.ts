@@ -9,7 +9,6 @@ export declare class ReSearch {
     typingHandler: Function;
     returnHandler: Function;
     placeholder: string;
-    showDropdown: boolean;
     verticalDisplayed: Value[];
     horizontalDisplayed: Value[];
     searchExpanded: boolean;
