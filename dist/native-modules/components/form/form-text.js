@@ -6,8 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
+import { inject, TaskQueue } from 'aurelia-framework';
 var ReFormText = /** @class */ (function () {
-    function ReFormText() {
+    function ReFormText(taskQueue) {
+        this.taskQueue = taskQueue;
         this.label = '';
         this.name = '';
         this.placeholder = '';
@@ -24,6 +26,8 @@ var ReFormText = /** @class */ (function () {
         this.patternError = '';
         this.validated = null;
         this.validateOnKeyup = null;
+        this.focusOnAttach = null;
+        this.inputElement = null;
         this._regex = /./;
         this.errorMessage = '';
     }
@@ -34,6 +38,15 @@ var ReFormText = /** @class */ (function () {
         this._resetRegex();
     };
     ReFormText.prototype.attached = function () {
+        var _this = this;
+        if (this.focusOnAttach) {
+            this.taskQueue.queueMicroTask(function () {
+                console.log('here');
+                if (_this.inputElement !== null) {
+                    _this.inputElement.focus();
+                }
+            });
+        }
         this._validate();
     };
     ReFormText.prototype._resetRegex = function (newType) {
@@ -176,8 +189,14 @@ var ReFormText = /** @class */ (function () {
             defaultBindingMode: bindingMode.oneWay
         })
     ], ReFormText.prototype, "validateOnKeyup", void 0);
+    __decorate([
+        bindable({
+            defaulltBindingMode: bindingMode.oneTime
+        })
+    ], ReFormText.prototype, "focusOnAttach", void 0);
     ReFormText = __decorate([
-        customElement('re-form-text')
+        customElement('re-form-text'),
+        inject(TaskQueue)
     ], ReFormText);
     return ReFormText;
 }());

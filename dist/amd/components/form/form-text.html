@@ -2,6 +2,7 @@
   <div class="form ${inline ? 'form--inline' : ''}" re-error-class.bind="isError" re-success-class.bind="isSuccess" data-error="form" data-success="form">
     <div class="form__input">
       <input
+        ref="inputElement"
         type="${type}"
         name="${name}"
         placeholder="${placeholder}"
