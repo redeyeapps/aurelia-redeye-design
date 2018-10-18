@@ -41,7 +41,6 @@ define(["require", "exports", "aurelia-templating", "aurelia-binding", "aurelia-
             var _this = this;
             if (this.focusOnAttach) {
                 this.taskQueue.queueMicroTask(function () {
-                    console.log('here');
                     if (_this.inputElement !== null) {
                         _this.inputElement.focus();
                     }

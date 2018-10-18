@@ -1,4 +1,6 @@
+import { TaskQueue } from 'aurelia-framework';
 export declare class ReFormTextarea {
+    private taskQueue;
     label: string;
     name: string;
     placeholder: string;
@@ -8,4 +10,8 @@ export declare class ReFormTextarea {
     hint: string;
     value: string;
     rows: string;
+    focusOnAttach: null | boolean;
+    private inputElement;
+    constructor(taskQueue: TaskQueue);
+    attached(): void;
 }

@@ -41,7 +41,6 @@ var ReFormText = /** @class */ (function () {
         var _this = this;
         if (this.focusOnAttach) {
             this.taskQueue.queueMicroTask(function () {
-                console.log('here');
                 if (_this.inputElement !== null) {
                     _this.inputElement.focus();
                 }

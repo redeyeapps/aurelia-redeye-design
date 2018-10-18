@@ -8,8 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_templating_1 = require("aurelia-templating");
 var aurelia_binding_1 = require("aurelia-binding");
+var aurelia_framework_1 = require("aurelia-framework");
 var ReFormTextarea = /** @class */ (function () {
-    function ReFormTextarea() {
+    function ReFormTextarea(taskQueue) {
+        this.taskQueue = taskQueue;
         this.label = '';
         this.name = '';
         this.placeholder = '';
@@ -19,7 +21,19 @@ var ReFormTextarea = /** @class */ (function () {
         this.hint = '';
         this.value = '';
         this.rows = '';
+        this.focusOnAttach = null;
+        this.inputElement = null;
     }
+    ReFormTextarea.prototype.attached = function () {
+        var _this = this;
+        if (this.focusOnAttach) {
+            this.taskQueue.queueMicroTask(function () {
+                if (_this.inputElement !== null) {
+                    _this.inputElement.focus();
+                }
+            });
+        }
+    };
     __decorate([
         aurelia_templating_1.bindable({
             defaultBindingMode: aurelia_binding_1.bindingMode.oneTime
@@ -63,8 +77,14 @@ var ReFormTextarea = /** @class */ (function () {
     __decorate([
         aurelia_templating_1.bindable()
     ], ReFormTextarea.prototype, "rows", void 0);
+    __decorate([
+        aurelia_templating_1.bindable({
+            defaulltBindingMode: aurelia_binding_1.bindingMode.oneTime
+        })
+    ], ReFormTextarea.prototype, "focusOnAttach", void 0);
     ReFormTextarea = __decorate([
-        aurelia_templating_1.customElement('re-form-textarea')
+        aurelia_templating_1.customElement('re-form-textarea'),
+        aurelia_framework_1.inject(aurelia_framework_1.TaskQueue)
     ], ReFormTextarea);
     return ReFormTextarea;
 }());

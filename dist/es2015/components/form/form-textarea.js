@@ -6,8 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
+import { TaskQueue, inject } from 'aurelia-framework';
 var ReFormTextarea = /** @class */ (function () {
-    function ReFormTextarea() {
+    function ReFormTextarea(taskQueue) {
+        this.taskQueue = taskQueue;
         this.label = '';
         this.name = '';
         this.placeholder = '';
@@ -17,7 +19,19 @@ var ReFormTextarea = /** @class */ (function () {
         this.hint = '';
         this.value = '';
         this.rows = '';
+        this.focusOnAttach = null;
+        this.inputElement = null;
     }
+    ReFormTextarea.prototype.attached = function () {
+        var _this = this;
+        if (this.focusOnAttach) {
+            this.taskQueue.queueMicroTask(function () {
+                if (_this.inputElement !== null) {
+                    _this.inputElement.focus();
+                }
+            });
+        }
+    };
     __decorate([
         bindable({
             defaultBindingMode: bindingMode.oneTime
@@ -61,8 +75,14 @@ var ReFormTextarea = /** @class */ (function () {
     __decorate([
         bindable()
     ], ReFormTextarea.prototype, "rows", void 0);
+    __decorate([
+        bindable({
+            defaulltBindingMode: bindingMode.oneTime
+        })
+    ], ReFormTextarea.prototype, "focusOnAttach", void 0);
     ReFormTextarea = __decorate([
-        customElement('re-form-textarea')
+        customElement('re-form-textarea'),
+        inject(TaskQueue)
     ], ReFormTextarea);
     return ReFormTextarea;
 }());
