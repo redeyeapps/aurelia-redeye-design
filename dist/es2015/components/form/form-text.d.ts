@@ -1,4 +1,6 @@
+import { TaskQueue } from 'aurelia-framework';
 export declare class ReFormText {
+    private taskQueue;
     label: string;
     name: string;
     placeholder: string;
@@ -15,8 +17,11 @@ export declare class ReFormText {
     patternError: string;
     validated: null | boolean;
     validateOnKeyup: null | boolean;
+    focusOnAttach: null | boolean;
+    private inputElement;
     private _regex;
     private errorMessage;
+    constructor(taskQueue: TaskQueue);
     typeChanged(n: string): void;
     patternChanged(): void;
     attached(): void;

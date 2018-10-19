@@ -1,7 +1,9 @@
 import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
+import { inject, TaskQueue } from 'aurelia-framework';
 
 @customElement('re-form-text')
+@inject(TaskQueue)
 export class ReFormText {
   @bindable({
     defaultBindingMode: bindingMode.oneTime
@@ -58,8 +60,17 @@ export class ReFormText {
     defaultBindingMode: bindingMode.oneWay
   }) validateOnKeyup: null | boolean = null;
 
+  @bindable({
+    defaulltBindingMode: bindingMode.oneTime
+  }) focusOnAttach: null | boolean = null;
+
+  private inputElement: null | HTMLInputElement = null;
   private _regex: RegExp = /./;
   private errorMessage: string = '';
+
+  constructor(
+    private taskQueue: TaskQueue
+  ) {}
 
   typeChanged(n: string) {
     this._resetRegex(n);
@@ -70,6 +81,13 @@ export class ReFormText {
   }
 
   attached() {
+    if (this.focusOnAttach) {
+      this.taskQueue.queueMicroTask(() => {
+        if (this.inputElement !== null) {
+          this.inputElement.focus();
+        }
+      });
+    }
     this._validate();
   }
 
