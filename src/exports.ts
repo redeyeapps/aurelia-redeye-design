@@ -1,3 +1,7 @@
+export * from './layout/navbar/navbar';
+export * from './components/avatar/avatar';
+export * from './components/charts';
+export * from './components/dropdown/dropdown';
 export * from './components/form/form';
 export * from './components/form/form-checkbox';
 export * from './components/form/form-number';
@@ -6,9 +10,6 @@ export * from './components/form/form-scale';
 export * from './components/form/form-select';
 export * from './components/form/form-text';
 export * from './components/form/form-textarea';
-export * from './layout/navbar/navbar';
-export * from './components/avatar/avatar';
-export * from './components/dropdown/dropdown';
 export * from './components/spreadsheet/spreadsheet';
 export * from './components/search/search';
 export * from './components/tile-list/tile-list';

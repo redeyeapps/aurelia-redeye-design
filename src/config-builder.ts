@@ -12,6 +12,7 @@ export class ConfigBuilder {
     return this
       .useNavbar()
       .useAvatar()
+      .useCharts()
       .useDropdown()
       .useSearch()
       .useSpreadsheet()
@@ -40,6 +41,11 @@ export class ConfigBuilder {
 
   useAvatar(): ConfigBuilder {
     this.globalResources.push(PLATFORM.moduleName('./components/avatar/avatar'));
+    return this;
+  }
+
+  useCharts(): ConfigBuilder {
+    this.globalResources.push(PLATFORM.moduleName('./components/charts'));
     return this;
   }
 
