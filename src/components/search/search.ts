@@ -28,11 +28,17 @@ export class ReSearch {
   }
 
   attached() {
+    if (this.selectedValue) {
+      const currentSelection: Value | undefined = this.options.find(option =>
+        option.value === this.selectedValue);
+      if (currentSelection) this.displayedValue = currentSelection.label;
+    }
     if (!this.selectedValue && this.options && this.options.length) {
       const defaultValue: Value = this.options[0];
       this.selectedValue = defaultValue.value;
       this.displayedValue = defaultValue.label;
     }
+
     this.filterOptions();
     document.addEventListener('click', this.handleClickEvent);
   }
