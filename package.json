@@ -1,5 +1,5 @@
 {
-  "name": "aurelia-redeye-design",
+  "name": "@redeye/aurelia-components",
   "version": "1.11.1",
   "description": "An Aurelia Component Library based on the RedEye Design Pattern.",
   "keywords": [
