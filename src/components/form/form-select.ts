@@ -24,7 +24,9 @@ export class ReFormSelect {
   @bindable({
     defaultBindingMode: bindingMode.twoWay
   }) value = '';
-
+  @bindable({
+    defaultBindingMode: bindingMode.twoWay
+  }) allowNoSelection = false;
   @bindable({
     defaultBindingMode: bindingMode.oneWay
   }) options = [];
