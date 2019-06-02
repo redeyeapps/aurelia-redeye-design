@@ -1,7 +1,10 @@
 import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
+import { inject } from 'aurelia-framework';
+import { dispatchEvent } from '../../events';
 
 @customElement('re-form-number')
+@inject(Element)
 export class ReFormNumber {
   @bindable({
     defaultBindingMode: bindingMode.oneTime
@@ -45,4 +48,18 @@ export class ReFormNumber {
   @bindable({
     defaultBindingMode: bindingMode.oneWay
   }) suffix = '';
+
+  constructor(
+    private element: HTMLElement
+  ) {}
+
+  handleFocus() {
+    // Dispatch a focus event that bubbles
+    dispatchEvent(this.element, 'focus');
+  }
+
+  handleBlur() {
+    // Dispatch a blur event that bubbles
+    dispatchEvent(this.element, 'blur');
+  }
 }

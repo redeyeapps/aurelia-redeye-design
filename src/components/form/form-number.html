@@ -3,14 +3,16 @@
     <div class="form__input">
       <span if.bind="prefix.length" class="form__prefix">${prefix}</span>
       <input
-      type="number"
-      id="${id}"
-      name="${name}"
-      placeholder="${placeholder}"
-      value.bind="value"
-      re-form-disabled="${disabled}" re-form-readonly="${readonly}"
-      re-form-min="${min}" re-form-max="${max}" re-form-step="${step}"
-      />
+        type="number"
+        id="${id}"
+        name="${name}"
+        placeholder="${placeholder}"
+        value.bind="value"
+        re-form-disabled="${disabled}" re-form-readonly="${readonly}"
+        re-form-min="${min}" re-form-max="${max}" re-form-step="${step}"
+        focus.trigger="handleFocus()"
+        blur.trigger="handleBlur()"
+        />
       <span if.bind="suffix.length" class="form__suffix">${suffix}</span>
       <label if.bind="label.length" class="form__label">${label}</label>
       <div class="form__line"></div>

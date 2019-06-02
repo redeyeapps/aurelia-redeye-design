@@ -10,6 +10,7 @@
         re-form-maxlength="${maxlength}"
         re-form-disabled="${disabled}" re-form-readonly="${readonly}"
         blur.trigger="handleBlur()"
+        focus.trigger="handleFocus()"
         keyup.delegate="handleKeyup() & debounce:300"
         />
       <label if.bind="label.length" class="form__label">${label}</label>
