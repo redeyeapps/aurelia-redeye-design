@@ -6,6 +6,8 @@
         value.bind="value"
         re-form-rows=${rows}
         re-form-disabled="${disabled}" re-form-readonly="${readonly}"
+        focus.trigger="handleFocus()"
+        blur.trigger="handleBlur()"
         ></textarea>
       <label if.bind="label.length" class="form__label">${label}</label>
       <div class="form__line"></div>

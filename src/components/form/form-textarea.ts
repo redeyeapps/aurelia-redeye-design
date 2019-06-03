@@ -1,9 +1,10 @@
 import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
 import { TaskQueue, inject } from 'aurelia-framework';
+import { dispatchEvent } from '../../events';
 
 @customElement('re-form-textarea')
-@inject(TaskQueue)
+@inject(Element, TaskQueue)
 export class ReFormTextarea {
   @bindable({
     defaultBindingMode: bindingMode.oneTime
@@ -40,6 +41,7 @@ export class ReFormTextarea {
   private inputElement: null | HTMLInputElement = null;
 
   constructor(
+    private element: HTMLElement,
     private taskQueue: TaskQueue
   ) {}
 
@@ -51,5 +53,15 @@ export class ReFormTextarea {
         }
       });
     }
+  }
+
+  handleFocus() {
+    // Dispatch a focus event that bubbles
+    dispatchEvent(this.element, 'focus');
+  }
+
+  handleBlur() {
+    // Dispatch a blur event that bubbles
+    dispatchEvent(this.element, 'blur');
   }
 }

@@ -1,9 +1,10 @@
 import { bindable, customElement } from 'aurelia-templating';
 import { bindingMode } from 'aurelia-binding';
 import { inject, TaskQueue } from 'aurelia-framework';
+import { dispatchEvent } from '../../events';
 
 @customElement('re-form-text')
-@inject(TaskQueue)
+@inject(Element, TaskQueue)
 export class ReFormText {
   @bindable({
     defaultBindingMode: bindingMode.oneTime
@@ -69,6 +70,7 @@ export class ReFormText {
   private errorMessage: string = '';
 
   constructor(
+    private element: HTMLElement,
     private taskQueue: TaskQueue
   ) {}
 
@@ -116,8 +118,15 @@ export class ReFormText {
     }
   }
 
+  handleFocus() {
+    // Dispatch a focus event that bubbles
+    dispatchEvent(this.element, 'focus');
+  }
+
   handleBlur() {
     this._validate();
+    // Dispatch a blur event that bubbles
+    dispatchEvent(this.element, 'blur');
   }
 
   handleKeyup() {
