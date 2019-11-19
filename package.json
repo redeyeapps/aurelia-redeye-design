@@ -108,7 +108,7 @@
     "date-fns": "^2.0.0-alpha.7"
   },
   "devDependencies": {
-    "@types/jest": "^21.1.5",
+    "@types/jest": "^24.0.23",
     "@types/node": "^12.12.9",
     "@types/yargs": "^13.0.3",
     "aurelia-bootstrapper": "^2.1.1",
