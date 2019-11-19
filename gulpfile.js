@@ -27,4 +27,4 @@ gulp.task("copy:json", function() {
     .pipe(gulp.dest("dist/system"));
 });
 
-gulp.task("default", ["copy:html", "copy:css", "copy:json"]);
+gulp.task("default", gulp.parallel(["copy:html", "copy:css", "copy:json"]));
